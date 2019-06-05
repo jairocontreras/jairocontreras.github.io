@@ -57,8 +57,11 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     }
   }
+  document.getElementById("download").onclick = function() {
+    window.open("https://github.com/jairocontreras/inbox", "github");
+  }
   document.getElementById("donate").onclick = function() {
-    window.open("https://www.paypal.me/jairocontreras", "windowname");
+    window.open("https://www.paypal.me/jairocontreras", "paypal");
   }
 });
 </script>
@@ -84,9 +87,9 @@ document.addEventListener("DOMContentLoaded", function() {
 <p>Run <code>install.ahk</code>
 <p class=bold>SETUP
 <ul>
-  <li>How to add to <a href=https://support.microsoft.com/en-us/help/4026268/windows-10-change-startup-apps>system startup</a>
-  <li>How often does it check mail: every minute
   <li>How to add account: open <code>accounts.txt</code>
+  <li>How to start app: open <code>launch.ahk</code>
+  <li>How to add to <a href=https://support.microsoft.com/en-us/help/4026268/windows-10-change-startup-apps>system startup</a>
 </ul>
 <p class=bold>ABOUT
 <p>Current version: 1.0
