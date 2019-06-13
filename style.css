@@ -1,3 +1,15 @@
+a {
+  text-decoration: none;
+}
+a:active {
+  color: #00e;
+}
+a:not(.button):hover {
+  text-decoration: underline;
+}
+a:visited:active {
+  color: #551a8b;
+}
 body {
   font-family: segoe ui;
   margin-left: 25;

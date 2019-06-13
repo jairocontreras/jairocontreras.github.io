@@ -3,10 +3,8 @@
 <link rel=stylesheet href=/style.css>
 <title>Inbox for Gmail</title>
 <style>
-button {
-  border: 1px solid;
+button, span {
   cursor: pointer;
-  font-family: segoe ui;
 }
 button:focus {
   outline: none;
@@ -17,56 +15,44 @@ img {
 li {
   margin-bottom: 10;
 }
+span::after {
+  content: "\0025be";
+  margin-left: 2;
+}
 ul {
   padding-inline-start: 20px;
+}
+.absolute {
+  left: 20;
+  position: absolute;
+}
+.active:active {
+  color: black;
 }
 .bold {
   font-weight: bold;
 }
-.float {
-  float: left;
-}
-.large {
+.button {
+  -webkit-appearance: button;
   font-size: 16;
   padding-bottom: 12;
   padding-right: 20;
   padding-top: 12;
 }
+.float {
+  float: left;
+}
+.relative {
+  position: relative;
+}
 </style>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  const colors = ["slateblue", "orange", "blue"];
-  var unread = document.getElementById("unread");
-  var color;
-  document.getElementById("try").onclick = function() {
-    for (var i=0; i<colors.length; i++) {
-      //RegExp("^" + colors[i] + ".png").test(unread.getAttribute("src"))
-      //i == colors.indexOf(unread.getAttribute("src").replace(".png", ""))
-      if (colors[i] + ".png" == unread.getAttribute("src")) {
-        if (i < colors.length-1)
-          color = colors[i+1];
-        else
-          color = colors[0];
-        unread.src = color + ".png";
-        break;
-      }
-    }
-  }
-  document.getElementById("download").onclick = function() {
-    window.open("https://github.com/jairocontreras/inbox", "github");
-  }
-  document.getElementById("donate").onclick = function() {
-    window.open("https://www.paypal.me/jairocontreras", "paypal");
-  }
-});
-</script>
 <img src=gmail.png style=vertical-align:bottom><p style=display:inline;font-size:1.3em;font-weight:normal>Inbox for Gmail
 <p>Get notified of incoming mail in the system tray.
 <p class=bold>EXAMPLE</p>
 <img class=float src=gray.png title="username@gmail.com">
 <img id=unread src=slateblue.png title="username@gmail.com
 # unread">
-<button id=try style="border-color: gray; display: block; margin-top: 16; padding: 5 10">Try another color!</button>
+<button style="border: 1px solid gray; display: block; font-family: segoe ui; margin-top: 16; padding: 5 10">Try another color!</button>
 <p class=bold>FEATURES
 <ul>
   <li>Add multiple accounts
@@ -82,14 +68,42 @@ document.addEventListener("DOMContentLoaded", function() {
 <p>Run <code>install.ahk</code>
 <p class=bold>SETUP
 <ul>
-  <li>How to add account: open <code>accounts.txt</code>
+  <li style=margin-bottom:8><span>How to add account</span></li>
+  <ol style="height: 0; overflow-y: hidden; padding-inline-start: 15px; transition: height 1s ease-in-out">
+    <li>Open <code>accounts.txt</code>
+    <li>Enter login credentials
+    <li>Choose color from <code>icons</code> folder
+    <li>Add one account per line
+  </ol>
   <li>How to start app: open <code>launch.ahk</code>
   <li>How to add to <a href=https://support.microsoft.com/en-us/help/4026268/windows-10-change-startup-apps>system startup</a>
 </ul>
 <p class=bold>ABOUT
-<p>Current version: 1.0
-<br>Released 6/5/19
-<div style=margin-top:20>
-  <button class="float large" id=download style=background-color:#4caf50;border-color:#4caf50;color:white;margin-right:15;padding-left:50;position:relative><div style="background-color: white; height: 20; left: 20; position: absolute; width: 20; -webkit-mask-image: url(download.svg)"></div>Download</button>
-  <button class=large id=donate style="background: #ffc439 url(paypal.png) no-repeat 20px center; background-size: 21px 24px; border-color: #daa730; padding-left: 51">Donate</button>
+<p style=margin-bottom:20>Released 6/5/19
+<div>
+  <a class="button float relative" href=https://github.com/jairocontreras/inbox style=background-color:#4caf50;color:white;margin-right:15;padding-left:50><div class=absolute style=background-color:white;height:20;-webkit-mask-image:url(download.svg);width:20></div>Download</a>
+  <a class="active button relative" href=https://www.paypal.me/jairocontreras style=background-color:#ffc439;padding-left:51><div class=absolute style=background-image:url(paypal.png);height:24;width:21></div>Donate</a>
 </div>
+<script>
+const colors = ["slateblue", "orange", "blue"];
+var color,
+    ol = document.querySelector("ol"),
+    unread = document.getElementById("unread");
+
+document.querySelector("button").onclick = function() {
+  for (var i=0; i<colors.length; i++) {
+    if (colors[i] + ".png" == unread.getAttribute("src")) {
+      if (i < colors.length-1)
+        color = colors[i+1];
+      else
+        color = colors[0];
+      unread.src = color + ".png";
+      break;
+    }
+  }
+}
+
+document.querySelector("span").onclick = function() {
+  ol.style.height = (ol.style.height == "124px" ? 0 : 124);
+}
+</script>
