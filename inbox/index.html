@@ -2,32 +2,27 @@
 <link rel=icon href=/favicon.png>
 <link rel=stylesheet href=/style.css>
 <title>Inbox for Gmail</title>
+<script>
+const html = document.documentElement;
+html.style.visibility = "hidden";
+document.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll(".expand").forEach(function(elem) {
+    const collapsible = elem.nextElementSibling,
+          height = collapsible.offsetHeight;
+    elem.querySelector("span").onclick = function() {
+      collapsible.style.height = (collapsible.style.height == "0px" ? height : 0);
+    }
+    collapsible.style.height = 0;
+  });
+  html.style.visibility = "";
+});
+</script>
 <style>
-button, span {
-  cursor: pointer;
-}
-button:focus {
-  outline: none;
-}
 img {
   margin-right: 10;
 }
 li {
   margin-bottom: 10;
-}
-span::after {
-  content: "\0025be";
-  margin-left: 2;
-}
-ul {
-  padding-inline-start: 20px;
-}
-.absolute {
-  left: 20;
-  position: absolute;
-}
-.active:active {
-  color: black;
 }
 .bold {
   font-weight: bold;
@@ -39,20 +34,35 @@ ul {
   padding-right: 20;
   padding-top: 12;
 }
-.float {
-  float: left;
+.expand {
+  margin-bottom: 8;
+}
+.expand span {
+  cursor: pointer;
+}
+.expand span::after {
+  content: "\0025be";
+  margin-left: 2;
+}
+.img {
+  left: 20;
+  position: absolute;
+}
+.link:active {
+  color: black;
 }
 .relative {
   position: relative;
 }
 </style>
-<img src=gmail.png style=vertical-align:bottom><p style=display:inline;font-size:1.3em;font-weight:normal>Inbox for Gmail
+<img class=float src=gmail.png style=margin-top:1>
+<span style=font-size:1.3em>Inbox for Gmail</span>
 <p>Get notified of incoming mail in the system tray.
 <p class=bold>EXAMPLE</p>
 <img class=float src=gray.png title="username@gmail.com">
 <img id=unread src=slateblue.png title="username@gmail.com
 # unread">
-<button style="border: 1px solid gray; display: block; font-family: segoe ui; margin-top: 16; padding: 5 10">Try another color!</button>
+<button style="display: block; margin-top: 16">Try another color!</button>
 <p class=bold>FEATURES
 <ul>
   <li>Add multiple accounts
@@ -68,8 +78,10 @@ ul {
 <p>Run <code>install.ahk</code>
 <p class=bold>SETUP
 <ul>
-  <li style=margin-bottom:8><span>How to add account</span></li>
-  <ol style="height: 0; overflow-y: hidden; padding-inline-start: 15px; transition: height 1s ease-in-out">
+  <li class=expand>
+    <span>How to add account</span>
+  </li>
+  <ol style="overflow-y: hidden; padding-inline-start: 15px; transition: height 1s ease-in-out">
     <li>Open <code>accounts.txt</code>
     <li>Enter login credentials
     <li>Choose color from <code>icons</code> folder
@@ -81,18 +93,17 @@ ul {
 <p class=bold>ABOUT
 <p style=margin-bottom:20>Released 6/5/19
 <div>
-  <a class="button float relative" href=https://github.com/jairocontreras/inbox style=background-color:#4caf50;color:white;margin-right:15;padding-left:50><div class=absolute style=background-color:white;height:20;-webkit-mask-image:url(download.svg);width:20></div>Download</a>
-  <a class="active button relative" href=https://www.paypal.me/jairocontreras style=background-color:#ffc439;padding-left:51><div class=absolute style=background-image:url(paypal.png);height:24;width:21></div>Donate</a>
+  <a class="button float relative" href=https://github.com/jairocontreras/inbox style=background-color:#4caf50;color:white;margin-right:15;padding-left:50><div class=img style=background-color:white;height:20;-webkit-mask-image:url(download.svg);width:20></div>Download</a>
+  <a class="button link relative" href=https://www.paypal.me/jairocontreras style=background-color:#ffc439;padding-left:51><div class=img style=background-image:url(paypal.png);height:24;width:21></div>Donate</a>
 </div>
 <script>
-const colors = ["slateblue", "orange", "blue"];
-var color,
-    ol = document.querySelector("ol"),
-    unread = document.getElementById("unread");
+const colors = ["slateblue", "orange", "blue"],
+      unread = document.getElementById("unread");
 
 document.querySelector("button").onclick = function() {
-  for (var i=0; i<colors.length; i++) {
+  for (let i = 0; i < colors.length; i++) {
     if (colors[i] + ".png" == unread.getAttribute("src")) {
+      let color;
       if (i < colors.length-1)
         color = colors[i+1];
       else
@@ -101,9 +112,5 @@ document.querySelector("button").onclick = function() {
       break;
     }
   }
-}
-
-document.querySelector("span").onclick = function() {
-  ol.style.height = (ol.style.height == "124px" ? 0 : 124);
 }
 </script>
