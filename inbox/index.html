@@ -1,31 +1,36 @@
 <meta name=description content="Get notified of incoming mail in the system tray.">
-<link rel=icon href=/favicon.png>
+<link rel=icon href=blue.png>
 <link rel=stylesheet href=/style.css>
 <title>Inbox for Gmail</title>
 <script>
 const html = document.documentElement;
 html.style.visibility = "hidden";
 document.addEventListener("DOMContentLoaded", function() {
-  document.querySelectorAll(".expand").forEach(function(elem) {
+  document.querySelectorAll(".collapsible").forEach(function(elem) {
     const collapsible = elem.nextElementSibling,
           height = collapsible.offsetHeight;
-    elem.querySelector("span").onclick = function() {
+    elem.querySelector("span").addEventListener("click", function() {
+      this.classList.toggle("collapse");
       collapsible.style.height = (collapsible.style.height == "0px" ? height : 0);
-    }
+    });
     collapsible.style.height = 0;
   });
   html.style.visibility = "";
 });
 </script>
 <style>
-img {
-  margin-right: 10;
+body {
+  background-color: #faf0d9;
+  margin-top: 30;
 }
 li {
   margin-bottom: 10;
 }
-.bold {
-  font-weight: bold;
+p {
+  margin-block-start: 0;
+}
+p:not(.title) {
+  margin-block-end: 0;
 }
 .button {
   -webkit-appearance: button;
@@ -34,83 +39,87 @@ li {
   padding-right: 20;
   padding-top: 12;
 }
-.expand {
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+.collapse::after {
+  content: "\0025b4" !important;
+}
+.collapsible {
   margin-bottom: 8;
 }
-.expand span {
+.collapsible span {
   cursor: pointer;
 }
-.expand span::after {
+.collapsible span::after {
   content: "\0025be";
   margin-left: 2;
+}
+.drop_shadow::before {
+  border-radius: 100px / 10px;
+  bottom: 0;
+  box-shadow: 0 0 15px rgba(0,0,0,0.6);
+  content: "";
+  left: 10;
+  position: absolute;
+  right: 10;
+  top: 50%;
+  z-index: -2;
 }
 .img {
   left: 20;
   position: absolute;
 }
-.link:active {
+.title {
+  color: #c23b2c;
+  font-weight: 500;
+  margin-top: 20;
+}
+#donate:active {
   color: black;
 }
-.relative {
-  position: relative;
-}
 </style>
-<img class=float src=gmail.png style=margin-top:1>
-<span style=font-size:1.3em>Inbox for Gmail</span>
-<p>Get notified of incoming mail in the system tray.
-<p class=bold>EXAMPLE</p>
-<img class=float src=gray.png title="username@gmail.com">
-<img id=unread src=slateblue.png title="username@gmail.com
-# unread">
-<button style="display: block; margin-top: 16">Try another color!</button>
-<p class=bold>FEATURES
-<ul>
-  <li>Add multiple accounts
-  <li>Open-source; fully customizable
-</ul>
-<p class=bold>REQUIREMENTS
-<ul>
-  <li>Google account security setting: <a href=https://myaccount.google.com/lesssecureapps>Allow less secure apps</a>
-  <li>Passwords cannot contain whitespace
-  <li>Install <a href=https://www.autohotkey.com/>AutoHotkey</a>
-</ul>
-<p class=bold>INSTALLATION
-<p>Run <code>install.ahk</code>
-<p class=bold>SETUP
-<ul>
-  <li class=expand>
-    <span>How to add account</span>
-  </li>
-  <ol style="overflow-y: hidden; padding-inline-start: 15px; transition: height 1s ease-in-out">
-    <li>Open <code>accounts.txt</code>
-    <li>Enter login credentials
-    <li>Choose color from <code>icons</code> folder
-    <li>Add one account per line
-  </ol>
-  <li>How to start app: open <code>launch.ahk</code>
-  <li>How to add to <a href=https://support.microsoft.com/en-us/help/4026268/windows-10-change-startup-apps>system startup</a>
-</ul>
-<p class=bold>ABOUT
-<p style=margin-bottom:20>Released 6/5/19
-<div>
-  <a class="button float relative" href=https://github.com/jairocontreras/inbox style=background-color:#4caf50;color:white;margin-right:15;padding-left:50><div class=img style=background-color:white;height:20;-webkit-mask-image:url(download.svg);width:20></div>Download</a>
-  <a class="button link relative" href=https://www.paypal.me/jairocontreras style=background-color:#ffc439;padding-left:51><div class=img style=background-image:url(paypal.png);height:24;width:21></div>Donate</a>
+<div class=center style=width:638>
+  <div class=drop_shadow style="background-color: white; box-shadow: 0 1px 4px rgba(0,0,0,0.3), 0 0 40px rgba(0,0,0,0.1) inset; padding: 1.5em 2em; position: relative; width: 575">
+    <img src=windows.png style=position:absolute;right:12;top:12 title="For Windows">
+    <img src=gmail.png style=float:left;margin-right:10;margin-top:1>
+    <span style=font-size:1.3em>Inbox for Gmail</span>
+    <p style=margin-top:15>Get notified of incoming mail in the system tray.
+    <p class=title>FEATURES
+    <ul>
+      <li><img src=gray.png title="username"> Empty <img src=blue.png title="username
+2 unread"> Unread <i>*hover icons for demo</i>
+      <li>Supports multiple accounts, individual icons, and different colors
+    </ul>
+    <p class=title>REQUIREMENTS
+    <ul>
+      <li>Google account security setting: <a href=https://myaccount.google.com/lesssecureapps>Allow less secure apps</a>
+      <li>Passwords cannot contain whitespace
+      <li>Install <a href=https://www.autohotkey.com/>AutoHotkey</a>
+    </ul>
+    <p class=title>INSTALLATION
+    <p>Run <code>install.ahk</code>
+    <p class=title>SETUP
+    <ul>
+      <li class=collapsible>
+        <span>How to add account(s)</span>
+      </li>
+      <ol style="overflow-y: hidden; padding-inline-start: 15px; transition: height 1s ease-in-out">
+        <li>Open <code>accounts.txt</code>
+        <li>Enter login credentials
+        <li>Choose color from <code>icons</code> folder
+        <li>Add one account per line
+      </ol>
+      <li>How to start app: open <code>launch.ahk</code>
+      <li>How to add to <a href=https://support.microsoft.com/en-us/help/4026268/windows-10-change-startup-apps>system startup</a>
+    </ul>
+    <p class=title>ABOUT
+    <p>Created by Jairo Contreras
+    <p>Last updated 8/21/19
+    <div class=center style=margin-top:20;width:275>
+      <a class=button href=inbox.zip style=background-color:#4caf50;color:white;float:left;margin-right:10;padding-left:50;position:relative><div class=img style=background-color:white;height:20;-webkit-mask-image:url(download.svg);width:20></div>Download</a>
+      <a class=button href=https://www.paypal.me/jairocontreras id=donate style=background-color:#ffc439;padding-left:51;position:relative><div class=img style=background-image:url(paypal.png);height:24;width:21></div>Donate</a>
+    </div>
+  </div>
 </div>
-<script>
-const colors = ["slateblue", "orange", "blue"],
-      unread = document.getElementById("unread");
-
-document.querySelector("button").onclick = function() {
-  for (let i = 0; i < colors.length; i++) {
-    if (colors[i] + ".png" == unread.getAttribute("src")) {
-      let color;
-      if (i < colors.length-1)
-        color = colors[i+1];
-      else
-        color = colors[0];
-      unread.src = color + ".png";
-      break;
-    }
-  }
-}
-</script>

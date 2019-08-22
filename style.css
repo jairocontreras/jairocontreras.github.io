@@ -13,10 +13,6 @@ a:not(.button):hover {
 body, button, input {
   font-family: segoe ui;
 }
-body {
-  margin-left: 25;
-  margin-top: 20;
-}
 button {
   padding: 4 10;
 }
@@ -25,7 +21,4 @@ button:focus, input:focus {
 }
 ul {
   padding-inline-start: 18px;
-}
-.float {
-  float: left;
 }
