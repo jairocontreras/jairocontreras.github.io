@@ -1,5 +1,6 @@
-<meta name=description content="Get notified of incoming mail in the system tray.">
-<link rel=icon href=images/blue.png>
+<meta content="Get notified of incoming mail in the system tray." name=description>
+<link href=images/blue.png rel=icon>
+<link href=/style.css rel=stylesheet>
 <title>Inbox for Gmail</title>
 <style>
 a {
@@ -11,21 +12,12 @@ a:active {
 a:visited:active {
   color: #551a8b;
 }
-a:not(.button):hover {
+a:hover {
   text-decoration: underline;
 }
-body, button, input {
-  font-family: segoe ui;
-}
 body {
-  background-color: #faf0d9;
+  font-family: segoe ui;
   margin-top: 30;
-}
-button {
-  padding: 4 10;
-}
-button:focus, input:focus {
-  outline: none;
 }
 li {
   margin-bottom: 10;
@@ -40,9 +32,8 @@ ol, ul {
   padding-right: 20;
   padding-top: 12;
 }
-.center {
-  margin-left: auto;
-  margin-right: auto;
+.button:hover {
+  text-decoration: none;
 }
 .collapse::after {
   content: "\0025b4" !important;
@@ -62,17 +53,6 @@ ol, ul {
   content: "\0025be";
   margin-left: 2;
 }
-.drop_shadow::before {
-  border-radius: 100px / 10px;
-  bottom: 0;
-  box-shadow: 0 0 15px rgba(0,0,0,0.6);
-  content: "";
-  left: 10;
-  position: absolute;
-  right: 10;
-  top: 50%;
-  z-index: -2;
-}
 .ico {
   left: 20;
   position: absolute;
@@ -86,49 +66,47 @@ ol, ul {
   color: black;
 }
 </style>
-<div class=center style=width:635>
-  <div class=drop_shadow style="background-color: white; box-shadow: 0 1px 4px rgba(0,0,0,0.3), 0 0 40px rgba(0,0,0,0.1) inset; padding: 25 30; position: relative; width: 575">
-    <img src=images/windows.png style=position:absolute;right:14;top:12 title="For Windows">
-    <img src=images/gmail.png style=float:left>
-    <span style=font-size:21;margin-left:10>Inbox for Gmail</span>
-    <p>Get notified of incoming mail in the system tray.
-    <p class=title>FEATURES
-    <ul>
-      <li><img src=images/gray.png title="username"> Empty <img src=images/blue.png title="username
+<main class=center style="padding: 25 30">
+  <img src=images/windows.png style="position: absolute; right: 14; top: 12" title="For Windows">
+  <img src=images/gmail.png style="float: left; margin-right: 10">
+  <span style=font-size:21>Inbox for Gmail</span>
+  <p>Get notified of incoming mail in the system tray.
+  <p class=title>FEATURES
+  <ul>
+    <li><img src=images/gray.png title="username"> Empty <img src=images/blue.png title="username
 2 unread"> Unread <i style=color:green>*hover icons for demo</i>
-      <li>Supports multiple accounts, individual icons, and different colors
-      <li>Open-source
-    </ul>
-    <p class=title>REQUIREMENTS
-    <ul>
-      <li>Google account security setting: <a href=https://myaccount.google.com/lesssecureapps>Allow less secure apps</a>
-      <li>Passwords cannot contain whitespace
-      <li>Install <a href=https://www.autohotkey.com/>AutoHotkey</a>
-    </ul>
-    <p class=title>INSTALLATION
-    <p>Run <code>install.ahk</code>
-    <p class=title>SETUP
-    <ul>
-      <li class=collapsible>
-        <span>How to add account(s)</span>
-      </li>
-      <ol class=93>
-        <li>Create <code>accounts.txt</code>
-        <li>Enter <code>username password color</code> <i style=color:red>*choose from <code>icons</code> folder</i>
-        <li>Add one account per line
-      </ol>
-      <li>How to start app: open <code>launch.ahk</code>
-      <li>How to add to <a href=https://support.microsoft.com/en-us/help/4026268/windows-10-change-startup-apps>system startup</a>
-    </ul>
-    <p class=title>ABOUT
-    <p style=margin-bottom:5>Created by Jairo Contreras
-    <p style=margin-block-start:0>Last updated 8/22/19
-    <div class=center style=margin-top:20;width:275>
-      <a class=button href=inbox.zip style=background-color:#4caf50;color:white;float:left;margin-right:10;padding-left:50;position:relative><div class=ico style=background-color:white;height:20;-webkit-mask-image:url(download.svg);width:20></div>Download</a>
-      <a class=button href=https://www.paypal.me/jairocontreras id=donate style=background-color:#ffc439;padding-left:51;position:relative><div class=ico style=background-image:url(images/paypal.png);height:24;width:21></div>Donate</a>
-    </div>
+    <li>Supports multiple accounts, individual icons, and different colors
+    <li>Open-source
+  </ul>
+  <p class=title>REQUIREMENTS
+  <ul>
+    <li>Google account security setting: <a href=https://myaccount.google.com/lesssecureapps>Allow less secure apps</a>
+    <li>Passwords cannot contain whitespace
+    <li>Install <a href=https://www.autohotkey.com/>AutoHotkey</a>
+  </ul>
+  <p class=title>INSTALLATION
+  <p>Run <code>install.ahk</code>
+  <p class=title>SETUP
+  <ul>
+    <li class=collapsible>
+      <span>How to add account(s)</span>
+    </li>
+    <ol class=93>
+      <li>Create <code>accounts.txt</code>
+      <li>Enter <code>username password color</code> <i style=color:red>*choose from <code>icons</code> folder</i>
+      <li>Add one account per line
+    </ol>
+    <li>How to start app: open <code>launch.ahk</code>
+    <li>How to add to <a href=https://support.microsoft.com/en-us/help/4026268/windows-10-change-startup-apps>system startup</a>
+  </ul>
+  <p class=title>ABOUT
+  <p style=margin-bottom:5>Created by Jairo Contreras
+  <p style=margin-block-start:0>Last updated 8/22/19
+  <div class=center style="margin-top: 20; width: 275">
+    <a class=button href=inbox.zip style="background-color: #4caf50; color: white; float: left; margin-right: 10; padding-left: 50; position: relative"><div class=ico style="background-color: white; height: 20; -webkit-mask-image: url(download.svg); width: 20"></div>Download</a>
+    <a class=button href=https://www.paypal.me/jairocontreras id=donate style="background-color: #ffc439; padding-left: 51; position: relative"><div class=ico style="background-image: url(images/paypal.png); height: 24; width: 21"></div>Donate</a>
   </div>
-</div>
+</main>
 <script>
 document.querySelectorAll(".collapsible").forEach(function(elem) {
   const content = elem.nextElementSibling;

@@ -1,0 +1,24 @@
+body {
+  background-color: #faf0d9;
+}
+main {
+  background-color: white;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.3), 0 0 40px rgba(0,0,0,0.1) inset;
+  position: relative;
+  width: 580;
+}
+main::before {
+  border-radius: 100px / 10px;
+  bottom: 0;
+  box-shadow: 0 0 15px rgba(0,0,0,0.6);
+  content: "";
+  left: 10;
+  position: absolute;
+  right: 10;
+  top: 50%;
+  z-index: -2;
+}
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
