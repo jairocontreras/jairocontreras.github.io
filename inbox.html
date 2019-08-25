@@ -1,39 +1,17 @@
 <meta content="Get notified of incoming mail in the system tray." name=description>
 <link href=images/blue.png rel=icon>
-<link href=/style.css rel=stylesheet>
+<link href=resources/apps.css rel=stylesheet>
+<link href=resources/pages.css rel=stylesheet>
 <title>Inbox for Gmail</title>
 <style>
-a {
-  text-decoration: none;
-}
-a:active {
-  color: #00e;
-}
-a:visited:active {
-  color: #551a8b;
-}
-a:hover {
-  text-decoration: underline;
-}
-body {
-  font-family: segoe ui;
-  margin-top: 30;
-}
 li {
   margin-bottom: 10;
 }
-ol, ul {
+ol {
   padding-inline-start: 17px;
 }
-.button {
-  -webkit-appearance: button;
-  font-size: 16;
-  padding-bottom: 12;
-  padding-right: 20;
-  padding-top: 12;
-}
-.button:hover {
-  text-decoration: none;
+ul {
+  padding-inline-start: 18px;
 }
 .collapse::after {
   content: "\0025b4" !important;
@@ -53,40 +31,27 @@ ol, ul {
   content: "\0025be";
   margin-left: 2;
 }
-.ico {
-  left: 20;
-  position: absolute;
-}
-.title {
-  color: #c23b2c;
-  font-weight: 500;
-  margin-top: 20;
-}
-#donate:active {
-  color: black;
-}
 </style>
-<main class=center style="padding: 25 30">
-  <img src=images/windows.png style="position: absolute; right: 14; top: 12" title="For Windows">
-  <img src=images/gmail.png style="float: left; margin-right: 10">
-  <span style=font-size:21>Inbox for Gmail</span>
+<main>
+  <div id=windows></div>
+  <img id=app_icon src=images/gmail.png style=margin-top:1>
+  <span id=app_name>Inbox for Gmail</span>
   <p>Get notified of incoming mail in the system tray.
-  <p class=title>FEATURES
+  <p class=heading>FEATURES
   <ul>
     <li><img src=images/gray.png title="username"> Empty <img src=images/blue.png title="username
 2 unread"> Unread <i style=color:green>*hover icons for demo</i>
     <li>Supports multiple accounts, individual icons, and different colors
-    <li>Open-source
   </ul>
-  <p class=title>REQUIREMENTS
+  <p class=heading>REQUIREMENTS
   <ul>
     <li>Google account security setting: <a href=https://myaccount.google.com/lesssecureapps>Allow less secure apps</a>
     <li>Passwords cannot contain whitespace
     <li>Install <a href=https://www.autohotkey.com/>AutoHotkey</a>
   </ul>
-  <p class=title>INSTALLATION
+  <p class=heading>INSTALLATION
   <p>Run <code>install.ahk</code>
-  <p class=title>SETUP
+  <p class=heading>SETUP
   <ul>
     <li class=collapsible>
       <span>How to add account(s)</span>
@@ -99,12 +64,11 @@ ol, ul {
     <li>How to start app: open <code>launch.ahk</code>
     <li>How to add to <a href=https://support.microsoft.com/en-us/help/4026268/windows-10-change-startup-apps>system startup</a>
   </ul>
-  <p class=title>ABOUT
-  <p style=margin-bottom:5>Created by Jairo Contreras
-  <p style=margin-block-start:0>Last updated 8/22/19
-  <div class=center style="margin-top: 20; width: 275">
-    <a class=button href=inbox.zip style="background-color: #4caf50; color: white; float: left; margin-right: 10; padding-left: 50; position: relative"><div class=ico style="background-color: white; height: 20; -webkit-mask-image: url(download.svg); width: 20"></div>Download</a>
-    <a class=button href=https://www.paypal.me/jairocontreras id=donate style="background-color: #ffc439; padding-left: 51; position: relative"><div class=ico style="background-image: url(images/paypal.png); height: 24; width: 21"></div>Donate</a>
+  <p class=heading>ABOUT
+  <p>Last updated 8/22/19
+  <div class=center id=buttons>
+    <a href=download/inbox.zip><div></div>Download</a>
+    <a href=https://www.paypal.me/jairocontreras><div></div>Donate</a>
   </div>
 </main>
 <script>

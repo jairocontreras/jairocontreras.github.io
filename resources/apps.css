@@ -1,0 +1,70 @@
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+body {
+  font-family: segoe ui;
+  margin-top: 30;
+}
+.heading {
+  color: #c23b2c;
+  font-weight: 500;
+  margin-top: 20;
+}
+#app_icon {
+  float: left;
+  margin-right: 10;
+}
+#app_name {
+  font-size: 21;
+}
+#buttons {
+  margin-top: 20;
+}
+#buttons a {
+  -webkit-appearance: button;
+  font-size: 16;
+  padding-bottom: 12;
+  padding-right: 20;
+  padding-top: 12;
+  position: relative;
+}
+#buttons a:first-child {
+  background-color: #4caf50;
+  color: white;
+  margin-right: 10;
+  padding-left: 50;
+}
+#buttons a:first-child div {
+  background-color: white;
+  height: 20;
+  -webkit-mask-image: url(download.svg);
+  width: 20;
+}
+#buttons a:hover {
+  text-decoration: none;
+}
+#buttons a:nth-child(2) {
+  background-color: #ffc439;
+  color: black;
+  padding-left: 51;
+}
+#buttons a:nth-child(2) div {
+  background-image: url(/images/paypal.png);
+  height: 24;
+  width: 21;
+}
+#buttons div {
+  left: 20;
+  position: absolute;
+}
+#windows {
+  background-image: url(/images/windows.png);
+  height: 25;
+  position: absolute;
+  right: 10;
+  top: 10;
+  width: 26;
+}

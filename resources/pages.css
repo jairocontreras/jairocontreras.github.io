@@ -4,6 +4,9 @@ body {
 main {
   background-color: white;
   box-shadow: 0 1px 4px rgba(0,0,0,0.3), 0 0 40px rgba(0,0,0,0.1) inset;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 25 30;
   position: relative;
   width: 580;
 }
@@ -18,7 +21,10 @@ main::before {
   top: 50%;
   z-index: -2;
 }
+.break {
+  width: 100%;
+}
 .center {
-  margin-left: auto;
-  margin-right: auto;
+  display: flex;
+  justify-content: center;
 }
