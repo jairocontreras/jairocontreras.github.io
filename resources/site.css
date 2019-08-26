@@ -1,5 +1,13 @@
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
 body {
   background-color: #faf0d9;
+  font-family: segoe ui;
+  margin-top: 30;
 }
 main {
   background-color: white;
