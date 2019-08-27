@@ -8,28 +8,10 @@ li {
   margin-bottom: 10;
 }
 ol {
-  padding-inline-start: 17px;
+  padding-inline-start: 30px;
 }
 ul {
   padding-inline-start: 18px;
-}
-.collapse::after {
-  content: "\0025b4" !important;
-}
-.collapsible {
-  margin-bottom: 8; /* arrow increases li height by 2px */
-}
-.collapsible + ol {
-  height: 0;
-  overflow-y: hidden;
-  transition: height 1s ease-in-out;
-}
-.collapsible span {
-  cursor: pointer;
-}
-.collapsible span::after {
-  content: "\0025be";
-  margin-left: 2;
 }
 </style>
 <main>
@@ -47,36 +29,20 @@ ul {
   <ul>
     <li>Google account security setting: <a href=https://myaccount.google.com/lesssecureapps>Allow less secure apps</a>
     <li>Passwords cannot contain whitespace
-    <li>Install <a href=https://www.autohotkey.com/>AutoHotkey</a>
   </ul>
   <p class=heading>INSTALLATION
-  <p>Run <code>install.ahk</code>
+  <p>Run <code>install.exe</code>
   <p class=heading>SETUP
-  <ul>
-    <li class=collapsible>
-      <span>How to add account(s)</span>
-    </li>
-    <ol class=93>
-      <li>Create <code>accounts.txt</code>
-      <li>Enter <code>username password color</code> <i style=color:red>*choose from <code>icons</code> folder</i>
-      <li>Add one account per line
-    </ol>
-    <li>How to start app: open <code>launch.ahk</code>
-    <li>How to add to <a href=https://support.microsoft.com/en-us/help/4026268/windows-10-change-startup-apps>system startup</a>
-  </ul>
+  <p>How to add account:</p>
+  <ol>
+    <li>Create <code>accounts.txt</code>
+    <li>Enter <code>username password color</code> <i style=color:green>*choose from <code>icons</code> folder</i>
+    <li>Add one account per line
+  </ol>
   <p class=heading>ABOUT
-  <p>Last updated 8/22/19
+  <p>Last updated 8/27/19
   <div class=center id=buttons>
     <a href=download/inbox.zip id=download><div></div>Download</a>
     <a href=https://www.paypal.me/jairocontreras id=donate><div></div>Donate</a>
   </div>
 </main>
-<script>
-document.querySelectorAll(".collapsible").forEach(function(elem) {
-  const content = elem.nextElementSibling;
-  elem.querySelector("span").addEventListener("click", function() {
-    this.classList.toggle("collapse");
-    content.style.height = (!content.style.height ? content.className : 0);
-  });
-});
-</script>
