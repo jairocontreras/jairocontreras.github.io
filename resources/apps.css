@@ -1,3 +1,9 @@
+li {
+  margin-bottom: 10;
+}
+ul {
+  padding-inline-start: 18px;
+}
 .heading {
   color: #c23b2c;
   font-weight: 500;
