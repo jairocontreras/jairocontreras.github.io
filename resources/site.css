@@ -20,7 +20,7 @@ main {
   margin-right: auto;
   padding: 25 30;
   position: relative;
-  width: 580;
+  width: 600;
 }
 main::before {
   border-radius: 100px / 10px;
@@ -32,6 +32,20 @@ main::before {
   right: 10;
   top: 50%;
   z-index: -2;
+}
+.button {
+  -webkit-appearance: button;
+  color: black;
+  font-size: 16;
+  padding: 12 20;
+  position: relative;
+}
+.button:hover {
+  text-decoration: none;
+}
+.button div {
+  left: 20;
+  position: absolute;
 }
 .break {
   width: 100%;

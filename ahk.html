@@ -1,0 +1,131 @@
+<link rel=icon href=images/ahk.ico>
+<link rel=stylesheet href=resources/site.css>
+<title>Collection of AutoHotkey Scripts</title>
+<style>
+li {
+  margin-bottom: 10;
+}
+ul {
+  padding-inline-start: 18px;
+}
+.heading {
+  color: #c23b2c;
+  font-weight: 500;
+  margin-top: 20;
+}
+hr {
+  margin-bottom: 20;
+  margin-top: 20;
+}
+.description {
+  font-style: italic;
+}
+.download {
+  background-color: #4caf50;
+  color: white;
+  padding-left: 50;
+}
+.download div {
+  -webkit-mask-image: url(resources/download.svg);
+  background-color: white;
+  height: 20;
+  width: 20;
+}
+.hotkeys code, .hotkeys img:not(:last-child) {
+  margin-right: 10;
+}
+.hotkeys code {
+  line-height: 22px;
+}
+.hotkeys img {
+  object-fit: contain;
+}
+.icon {
+  margin-right: 5;
+  vertical-align: middle;
+}
+.icon + span {
+  vertical-align: middle;
+}
+.key {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.2);
+  padding: 2 5;
+}
+#home:visited {
+  color: #00e;
+}
+</style>
+<main>
+  <a id=home href=index.html style="position: absolute; right: 15; top: 10">Home</a>
+  <p><img class=icon src=images/autosizer.png><span>AutoSizer</span>
+  <p class=description>Automatically maximize new windows.
+  <p>Last updated 8/30/19</p>
+  <a class="button download" href=downloads/autosizer.zip><div></div>Download</a>
+  <hr>
+  <p>Icon Resource Viewer
+  <p class=description>Preview icons from binary files.
+  <div style=text-align:center>
+    <img src=images/icon_resource_viewer.png>
+  </div>
+  <p>Supported file types: ani, cpl, cur, dll, exe, ico, scr
+  <p>Last updated 8/24/19</p>
+  <a class="button download" href=downloads/icon_resource_viewer.ahk><div></div>Download</a>
+  <hr>
+  <p>Inbox for Gmail
+  <p class=description>Get notified of incoming mail in the system tray.
+  <p class=heading>FEATURES
+  <ul>
+    <li><img src=images/gray.png title="username" style=margin-right:5><span style=margin-right:8>Empty</span><img src=images/blue.png title="username
+2 unread" style=margin-right:5><span style=margin-right:5>Unread</span><i style=color:green>*hover icons for demo</i>
+    <li>Supports multiple accounts, individual icons, and different colors
+  </ul>
+  <p class=heading>REQUIREMENTS
+  <ul>
+    <li>Google account security setting: <a href=https://myaccount.google.com/lesssecureapps>Allow less secure apps</a>
+    <li>Passwords cannot contain whitespace
+  </ul>
+  <p class=heading>INSTALLATION
+  <p>Run <code>install.ahk</code>
+  <p class=heading>SETUP
+  <p>How to add account:
+  <ol style=padding-inline-start:25px>
+    <li>Create <code>accounts.txt</code>
+    <li>Enter <code>username password color</code> <i style=color:green>*choose from <code>icons</code> folder</i>
+    <li>Add one account per line
+  </ol>
+  <p class=heading>NOTES
+  <p>Run <code>launch.ahk</code>
+  <p>Last updated 8/27/19</p>
+  <a class="button download" href=downloads/inbox.zip><div></div>Download</a>
+  <hr>
+  <p><img class=icon src=images/restore.png><span>Maximize</span>
+  <div class="center hotkeys">
+    <img src=images/win.png>
+    <img src=images/plus.png>
+    <span><code class=key style="padding-left: 15; padding-right: 15">Space</code></span>
+    <span>Maximize/Restore</span>
+    <div class=break style=margin-bottom:15></div>
+    <span><code class=key>End</code></span>
+    <span>Minimize</span>
+  </div>
+  <p>Hold <code class=key>Shift</code> to unminimize
+  <p>Last updated 8/28/19</p>
+  <a class="button download" href=downloads/maximize.zip><div></div>Download</a>
+  <hr>
+  <p><img class=icon src=images/snap.png><span>Snap</span>
+  <div class="center hotkeys">
+    <img src=images/win.png>
+    <img src=images/plus.png>
+    <img src=images/controls.png>
+  </div>
+  <p class=heading>FEATURES
+  <ul>
+    <li>Improved window snapping
+    <li>Preserve window resize
+    <li>Hold <code class=key>Shift</code> to extend window
+  </ul>
+  <p>Last updated 8/28/19</p>
+  <a class="button download" href=downloads/snap.zip><div></div>Download</a>
+</main>
