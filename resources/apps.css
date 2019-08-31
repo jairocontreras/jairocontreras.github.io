@@ -9,18 +9,11 @@ ul {
   font-weight: 500;
   margin-top: 20;
 }
-.icon {
-  float: left;
-  margin-right: 10;
-}
 .key {
   border: 1px solid #ccc;
   border-radius: 3px;
   box-shadow: 0 1px 0 rgba(0,0,0,0.2);
   padding: 2 5;
-}
-.title {
-  font-size: 21;
 }
 #buttons {
   margin-top: 20;
@@ -62,7 +55,7 @@ ul {
   -webkit-mask-image: url(download.svg);
   width: 20;
 }
-#hotkeys *:not(:last-child) {
+#hotkeys code, #hotkeys img:not(:last-child) {
   margin-right: 10;
 }
 #hotkeys img {

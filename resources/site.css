@@ -10,6 +10,9 @@ body {
   margin-bottom: 30;
   margin-top: 30;
 }
+body p:first-of-type {
+  margin-block-start: 0;
+}
 main {
   background-color: white;
   box-shadow: 0 1px 4px rgba(0,0,0,0.3), 0 0 40px rgba(0,0,0,0.1) inset;
