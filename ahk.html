@@ -5,13 +5,14 @@
 li {
   margin-bottom: 10;
 }
-ul {
+ol, ul {
   padding-inline-start: 18px;
 }
 .heading {
   color: #c23b2c;
   font-weight: 500;
   margin-top: 20;
+  text-transform: uppercase;
 }
 hr {
   margin-bottom: 20;
@@ -75,28 +76,26 @@ hr {
   <hr>
   <p>Inbox for Gmail
   <p class=description>Get notified of incoming mail in the system tray
-  <p class=heading>FEATURES
+  <p class=heading>features
   <ul>
     <li><img src=images/gray.png title="username" style=margin-right:5><span style=margin-right:8>Empty</span><img src=images/blue.png title="username
 2 unread" style=margin-right:5><span style=margin-right:5>Unread</span><i style=color:green>*hover icons for demo</i>
     <li>Supports multiple accounts, individual icons, and different colors
   </ul>
-  <p class=heading>REQUIREMENTS
+  <p class=heading>requirements
   <ul>
     <li>Google account security setting: <a href=https://myaccount.google.com/lesssecureapps>Allow less secure apps</a>
     <li>Passwords cannot contain whitespace
   </ul>
-  <p class=heading>INSTALLATION
+  <p class=heading>installation
   <p>Run <code>install.ahk</code>
-  <p class=heading>SETUP
-  <p>How to add account:
-  <ol style=padding-inline-start:25px>
+  <p class=heading>setup
+  <ol>
     <li>Create <code>accounts.txt</code>
     <li>Enter <code>username password color</code> <i style=color:green>*choose from <code>icons</code> folder</i>
     <li>Add one account per line
+    <li>Run <code>launch.ahk</code>
   </ol>
-  <p class=heading>NOTES
-  <p>Run <code>launch.ahk</code>
   <p>Last updated 8/27/19</p>
   <a class="button download" href=downloads/inbox.zip><div></div>Download</a>
   <hr>
@@ -122,16 +121,18 @@ hr {
     <img src=images/plus.png>
     <img src=images/controls.png>
   </div>
-  <p class=heading>FEATURES
+  <p class=heading>features
   <ul>
     <li>Preserve window resize
     <li>Hold <code class=key>Shift</code> to extend window
   </ul>
+  <p>See recommended <a href=resources/snap.reg>system settings</a>
   <p>Last updated 8/28/19</p>
   <a class="button download" href=downloads/snap.zip><div></div>Download</a>
   <hr>
   <p><img class=icon src=images/workspace.png style=margin-right:8><span>Workspace</span>
   <p class=description>Automatically restore off-screen windows
+  <p>See recommended <a href=resources/snap.reg>system settings</a>
   <p>Last updated 8/31/19</p>
   <a class="button download" href=downloads/workspace.zip><div></div>Download</a>
 </main>
