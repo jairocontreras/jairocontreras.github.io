@@ -33,20 +33,6 @@ main::before {
   top: 50%;
   z-index: -2;
 }
-.button {
-  -webkit-appearance: button;
-  color: black;
-  font-size: 16;
-  padding: 12 20;
-  position: relative;
-}
-.button:hover {
-  text-decoration: none;
-}
-.button div {
-  left: 20;
-  position: absolute;
-}
 .break {
   width: 100%;
 }

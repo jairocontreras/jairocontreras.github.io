@@ -18,6 +18,20 @@ hr {
   margin-bottom: 20;
   margin-top: 20;
 }
+.button {
+  -webkit-appearance: button;
+  color: black;
+  font-size: 16;
+  padding: 12 20;
+  position: relative;
+}
+.button:hover {
+  text-decoration: none;
+}
+.button div {
+  left: 20;
+  position: absolute;
+}
 .description {
   font-style: italic;
 }
@@ -59,7 +73,7 @@ hr {
 }
 </style>
 <main>
-  <a id=home href=index.html style="position: absolute; right: 15; top: 10">Home</a>
+  <a href=/ id=home style="position: absolute; right: 15; top: 10">Home</a>
   <p><img class=icon src=images/autosizer.png><span>AutoSizer</span>
   <p class=description>Automatically maximize applications
   <p>Last updated 8/30/19</p>
@@ -67,7 +81,7 @@ hr {
   <hr>
   <p>Icon Resource Viewer
   <p class=description>Preview icons from binary files
-  <div style=text-align:center>
+  <div style="text-align: center">
     <img src=images/icon_resource_viewer.png>
   </div>
   <p>Supported file types: ani, cpl, cur, dll, exe, ico, scr
@@ -78,8 +92,8 @@ hr {
   <p class=description>Get notified of incoming mail in the system tray
   <p class=heading>features
   <ul>
-    <li><img src=images/gray.png title="username" style=margin-right:5><span style=margin-right:8>Empty</span><img src=images/blue.png title="username
-2 unread" style=margin-right:5><span style=margin-right:5>Unread</span><i style=color:green>*hover icons for demo</i>
+    <li><img src=images/gray.png title="username" style="margin-right: 5"><span style="margin-right: 8">Empty</span><img src=images/blue.png title="username
+2 unread" style="margin-right: 5"><span style="margin-right: 5">Unread</span><i style="color: green">*hover icons for demo</i>
     <li>Supports multiple accounts, individual icons, and different colors
   </ul>
   <p class=heading>requirements
@@ -92,7 +106,7 @@ hr {
   <p class=heading>setup
   <ol>
     <li>Create <code>accounts.txt</code>
-    <li>Enter <code>username password color</code> <i style=color:green>*choose from <code>icons</code> folder</i>
+    <li>Enter <code>username password color</code> <i style="color: green">*choose from <code>icons</code> folder</i>
     <li>Add one account per line
     <li>Run <code>launch.ahk</code>
   </ol>
@@ -106,7 +120,7 @@ hr {
     <img src=images/plus.png>
     <span><code class=key style="padding-left: 15; padding-right: 15">Space</code></span>
     <span>Maximize/Restore</span>
-    <div class=break style=margin-bottom:15></div>
+    <div class=break style="margin-bottom: 15"></div>
     <span><code class=key>End</code></span>
     <span>Minimize</span>
   </div>
@@ -130,8 +144,11 @@ hr {
   <p>Last updated 8/28/19</p>
   <a class="button download" href=downloads/snap.zip><div></div>Download</a>
   <hr>
-  <p><img class=icon src=images/workspace.png style=margin-right:8><span>Workspace</span>
+  <p><img class=icon src=images/workspace.png style="margin-right: 8"><span>Workspace</span>
   <p class=description>Automatically restore off-screen windows
   <p>Last updated 8/31/19</p>
   <a class="button download" href=downloads/workspace.zip><div></div>Download</a>
+  <div style="margin-top: 20; text-align: center">
+    <a class=button href=https://www.paypal.me/jairocontreras style="background-color: #ffc439; margin-right: 10; padding-left: 51"><div style="background-image: url(images/paypal.png); height: 24; width: 21"></div>Donate</a>
+  </div>
 </main>
