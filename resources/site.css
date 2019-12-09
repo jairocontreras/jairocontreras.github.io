@@ -5,7 +5,7 @@ a:hover {
   text-decoration: underline;
 }
 body {
-  background-color: #faf0d9;
+  background-color: #e6e6e6;
   font-family: segoe ui;
   margin-bottom: 30;
   margin-top: 30;
@@ -20,7 +20,7 @@ main {
   margin-right: auto;
   padding: 25 30;
   position: relative;
-  width: 600;
+  width: 640;
 }
 main::before {
   border-radius: 100px / 10px;
@@ -35,20 +35,6 @@ main::before {
 }
 .break {
   width: 100%;
-}
-.button {
-  -webkit-appearance: button;
-  color: black;
-  font-size: 16;
-  padding: 12 20;
-  position: relative;
-}
-.button:hover {
-  text-decoration: none;
-}
-.button div {
-  left: 20;
-  position: absolute;
 }
 .center {
   display: flex;
