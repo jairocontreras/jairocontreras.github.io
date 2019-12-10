@@ -44,3 +44,25 @@ main > *:last-child {
   flex-flow: row wrap;
   justify-content: center;
 }
+.download {
+  -webkit-appearance: button;
+  background-color: #4caf50;
+  color: white;
+  font-size: 16;
+  padding-bottom: 12;
+  padding-left: 50;
+  padding-right: 20;
+  padding-top: 12;
+  position: relative;
+}
+.download:hover {
+  text-decoration: none;
+}
+.download div {
+  -webkit-mask-image: url(download.svg);
+  background-color: white;
+  height: 20;
+  left: 20;
+  position: absolute;
+  width: 20;
+}
