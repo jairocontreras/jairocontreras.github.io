@@ -75,7 +75,7 @@ input::-webkit-inner-spin-button {
 <main style="padding-bottom: 35">
   <div style="display: table; margin-bottom: 35; margin-left: auto; margin-right: auto">
     <p style="margin-bottom: 30"><img src=images\keys-24.png style="margin-right: 5; vertical-align: top">Password Generator</p>
-    <input id=number type=number min=1 max=26 value=1 required class=border style="float: left; margin-right: 10; padding-bottom: 7; padding-top: 8; width: 44">
+    <input id=number type=number value=1 min=1 max=26 autocomplete=off required class=border style="float: left; margin-right: 10; padding-bottom: 7; padding-top: 8; width: 44">
     <div class=arrows style="float: left; position: relative">
       <div id=up class=up style="top: -4"></div>
       <div id=down class=down style="top: 19"></div>
@@ -83,7 +83,7 @@ input::-webkit-inner-spin-button {
     </div>
   </div>
   <div style="text-align: center">
-    <input id=result value=Result readonly class="border padding" style="width: 236">
+    <input id=result value=Result autocomplete=off readonly class="border padding" style="width: 236">
     <button id=copy class="border padding" style="background-color: white; margin-left: 5; padding-left: 10; padding-right: 10; transition-duration: 0.5s">Copy</button>
   </div>
 </main>
