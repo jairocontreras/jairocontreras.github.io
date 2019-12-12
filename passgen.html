@@ -1,7 +1,7 @@
 <script async src=https://www.googletagmanager.com/gtag/js?id=UA-154409978-1></script>
 <script src=resources/gtag.js></script>
 <meta name=description content="Minimalistic password generator consisting of non-repeating lowercase letters">
-<link rel=icon href=/images/sppcomapi-16.png>
+<link rel=icon href=/images/keys-16.png>
 <link rel=stylesheet href=resources/site.css>
 <link rel=stylesheet href=https://fonts.googleapis.com/css?family=Roboto>
 <title>Password Generator</title>
@@ -12,7 +12,7 @@ body {
 button, input {
   font: 16px sans-serif;
 }
-button {
+button, .arrows div {
   cursor: pointer;
 }
 button:disabled {
@@ -21,31 +21,99 @@ button:disabled {
 button:focus, input:focus {
   outline: none;
 }
+input, .arrows div {
+  text-align: center;
+}
 input::-webkit-inner-spin-button {  
   display: none;
+}
+.arrows *, #copy {
+  position: absolute;
+}
+.arrows div {
+  background-color: #ccc;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  box-shadow: 1px 2px 15px #ccc;
+  height: 18;
+  width: 18;
+}
+.arrows div::before {
+  border-color: #007bff transparent;
+  border-style: solid;
+  content: "";
+  display: inline-block;
+  margin-top: 4;
+}
+.border {
+  border: 1px solid #bcbcbc;
+  border-radius: 5px;
+}
+.copied {
+  background-color: #26c281 !important;
+  border-color: #26c281;
+  color: white;
+  transition-duration: 0.3s !important;
+}
+.down::before {
+  border-width: 10 5 0 5;
+}
+.padding {
+  padding-bottom: 9;
+  padding-top: 10;
+}
+.up::before {
+  border-width: 0 5 10 5;
+}
+#copy:not(.copied):hover {
+  background-color: #f7f7f7 !important;
 }
 #generate:not(:disabled):hover {
   background-color: #4095c6 !important;
 }
 </style>
-<div style="left: 50%; position: absolute; top: 50%; transform: translate(-50%,-50%)">
-  <main class=center style="padding: 65 0">
-    <input id=number type=number min=1 max=26 value=1 required style="margin-right: 10; padding-bottom: 6; padding-top: 7; text-align: center; width: 44">
-    <button id=generate style="background-color: #4eb5f1; border: none; border-radius: 20px; color: white; line-height: 25px; padding: 5 20; transition-duration: 0.2s">Generate</button>
-    <div class=break style="margin-top: 25"></div>
-    <input id=result value=Result readonly style="margin-right: 8; padding-bottom: 10; padding-top: 10; text-align: center; width: 238">
-    <button id=copy style="background-color: white; border: 1px solid #aaa; padding: 11 10">Copy</button>
-  </main>
-</div>
+<main style="padding-bottom: 35">
+  <div style="display: table; margin-bottom: 35; margin-left: auto; margin-right: auto">
+    <p style="margin-bottom: 30"><img src=images\keys-24.png style="margin-right: 5; vertical-align: top">Password Generator</p>
+    <input id=number type=number min=1 max=26 value=1 required class=border style="float: left; margin-right: 10; padding-bottom: 7; padding-top: 8; width: 44">
+    <div class=arrows style="float: left; position: relative">
+      <div id=up class=up style="top: -4"></div>
+      <div id=down class=down style="top: 19"></div>
+      <button id=generate style="background-color: #4eb5f1; border: none; border-radius: 20px; color: white; left: 35; line-height: 25px; padding: 5 20; transition-duration: 0.2s; user-select: none">Generate</button>
+    </div>
+  </div>
+  <div style="text-align: center">
+    <input id=result value=Result readonly class="border padding" style="width: 236">
+    <button id=copy class="border padding" style="background-color: white; margin-left: 5; padding-left: 10; padding-right: 10; transition-duration: 0.5s">Copy</button>
+  </div>
+</main>
 <script>
 const alphabet = "abcdefghijklmnopqrstuvwxyz",
-      generate = document.getElementById("generate");
+      arrows = ["down", "up"],
+      copy = document.getElementById("copy"),
+      generate = document.getElementById("generate"),
+      number = document.getElementById("number");
 
-document.getElementById("number").addEventListener("input", function() {
+function reset() {
+  copy.innerHTML = "Copy";
+  copy.classList.remove("copied");
+}
+
+number.addEventListener("input", function() {
   generate.disabled = (this.validity.valid ? false : true);
 });
 
+arrows.forEach(function(item) {
+  document.getElementById(item).addEventListener("click", function() {
+    if ((item == "down" && number.value < 2) || (item == "up" && number.value > 25))
+      return
+    (item == "down" ? number.value-- : number.value++);
+    number.dispatchEvent(new Event("input"));
+  });
+});
+
 generate.addEventListener("click", function() {
+  reset();
   const length = document.querySelector("input").value,
         buffer_len = length-1;
   var buffer = "",
@@ -57,7 +125,7 @@ generate.addEventListener("click", function() {
           tmp = buffer.indexOf(strNewTmp);
       if (tmp == -1) {
         buffer += strNewTmp;
-        break;
+        break
       }
       else
         charset = charset.replace(strNewTmp, "");
@@ -71,7 +139,7 @@ generate.addEventListener("click", function() {
     if (tmp == -1) {
       const insert_pos = Math.floor(Math.random() * buffer_len);
       var result = buffer.substring(0, insert_pos) + new_tmp + buffer.substring(insert_pos, buffer_len);
-      break;
+      break
     }
     else
       charset = charset.replace(new_tmp, "");
@@ -79,7 +147,12 @@ generate.addEventListener("click", function() {
   document.getElementById("result").value = result;
 });
 
-document.getElementById("copy").addEventListener("click", function() {
+copy.addEventListener("click", function() {
   navigator.clipboard.writeText(document.getElementById("result").value);
+  copy.innerHTML = "Copied!";
+  copy.className += " copied";
+  setTimeout(function() {
+    reset();
+  }, 3000);
 });
 </script>
