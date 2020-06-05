@@ -1,4 +1,4 @@
-a {
+a, .download:hover {
   text-decoration: none;
 }
 a:hover {
@@ -33,7 +33,7 @@ main::before {
 main > p:first-child {
   margin-block-start: 0;
 }
-main > *:last-child {
+main > p:last-child {
   margin-block-end: 0;
 }
 .break {
@@ -45,12 +45,12 @@ main > *:last-child {
   justify-content: center;
 }
 .download {
-  -webkit-appearance: button;
   background: url(/images/download.png) 20px #4caf50 no-repeat;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
   color: white;
+  display: inline-block;
   padding: 12 20 12 50;
 }
 .download:hover {
-  text-decoration: none;
+  background-color: #46a049;
 }
