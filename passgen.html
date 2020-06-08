@@ -6,13 +6,10 @@
 <link rel=stylesheet href=https://fonts.googleapis.com/css?family=Roboto>
 <title>Password Generator</title>
 <style>
-body {
-  position: relative;
-}
 button, input {
   font: 16px sans-serif;
 }
-button, .arrows div {
+button, .arrow {
   cursor: pointer;
 }
 button:disabled {
@@ -21,48 +18,41 @@ button:disabled {
 button:focus, input:focus {
   outline: none;
 }
-input, .arrows div, .bottom {
-  text-align: center;
+input, .action, .arrow, .arrow::before {
+  border-style: solid;
+}
+input, .action, .arrow {
+  border-width: 1;
+  border-radius: 5px;
+}
+input, .action {
+  border-color: #bcbcbc;
 }
 input::-webkit-inner-spin-button {  
   display: none;
 }
-.arrows *, .bottom div {
-  position: absolute;
+.action {
+  background-color: white;
+  font-size: 15;
+  padding-left: 10;
+  padding-right: 10;
+  transition-duration: 0.2s;
 }
-.arrows div {
+.action:not(.copied):hover {
+  background-color: #f7f7f7 !important;
+}
+.arrow {
   background-color: #ccc;
-  border: 1px solid #aaa;
-  border-radius: 5px;
+  border-color: #aaa;
   box-shadow: 1px 2px 15px #ccc;
   height: 18;
   width: 18;
 }
-.arrows div::before {
+.arrow::before {
   border-color: #007bff transparent;
-  border-style: solid;
   content: "";
   display: inline-block;
   margin-top: 4;
-}
-.border, .bottom *:not(div) {
-  border: 1px solid #bcbcbc;
-  border-radius: 5px;
-}
-.bottom *:not(div) {
-  padding-bottom: 9;
-  padding-top: 10;
-}
-.bottom button {
-  background-color: white;
-  font-size: 15;
-  margin-left: 5;
-  padding-left: 10;
-  padding-right: 10;
-  transition-duration: 0.5s;
-}
-.bottom button:not(.copied):hover {
-  background-color: #f7f7f7 !important;
 }
 .copied {
   background-color: #26c281 !important;
@@ -70,32 +60,45 @@ input::-webkit-inner-spin-button {
   color: white;
   transition-duration: 0.3s !important;
 }
-.down::before {
-  border-width: 10 5 0 5;
+.flex > *:not(.end):not(:last-child) { /* this page only */
+  margin-right: 10;
 }
-.up::before {
-  border-width: 0 5 10 5;
+.margin {
+  margin-right: 5 !important;
+}
+.padding {
+  padding-bottom: 10;
+  padding-top: 10;
+}
+#down::before, #up::before {
+  border-left-width: 5;
+  border-right-width: 5;
+}
+#down::before {
+  border-bottom-width: 0;
+  border-top-width: 10;
 }
 #generate:not(:disabled):hover {
   background-color: #4095c6 !important;
 }
+#up::before {
+  border-bottom-width: 10;
+  border-top-width: 0;
+}
 </style>
 <main style="padding-bottom: 35">
-  <div style="display: table; margin-bottom: 35; margin-left: auto; margin-right: auto">
-    <p style="margin-bottom: 30"><img src=images\keys-24.png style="margin-right: 5; vertical-align: top">Password Generator</p>
-    <input id=number type=number value=1 min=1 max=26 autocomplete=off required class=border style="float: left; margin-right: 10; padding-bottom: 7; padding-top: 8; width: 44">
-    <div class=arrows style="float: left; position: relative">
-      <div id=up class=up style="top: -4"></div>
-      <div id=down class=down style="top: 19"></div>
-      <button id=generate style="background-color: #4eb5f1; border: none; border-radius: 20px; color: white; left: 35; line-height: 25px; padding: 5 20; transition-duration: 0.2s; user-select: none">Generate</button>
+  <p class=text-align style="font-size: 20"><img src=images\keys-24.png class="margin align-top">Password Generator</p>
+  <div class=flex>
+    <input id=number type=number value=1 min=1 max=26 autocomplete=off required class=text-align>
+    <div>
+      <div id=up class="text-align arrow" style="margin-bottom: 3"></div>
+      <div id=down class="text-align arrow"></div>
     </div>
-  </div>
-  <div class=bottom>
-    <input id=result autocomplete=off readonly style="width: 236">
-    <div style="display: inline-flex">
-      <button id=copy>Copy</button>
-      <button id=clear>Clear</button>
-    </div>
+    <button id=generate class=end style="background-color: #4eb5f1; border: none; border-radius: 20px; color: white; padding-left: 20; padding-right: 20; transition-duration: 0.2s; user-select: none">Generate</button>
+    <div class=break style="margin-bottom: 25"></div>
+    <input id=result autocomplete=off readonly class="text-align margin padding" style="width: 236">
+    <button id=copy class="action margin padding">Copy</button>
+    <button id=clear class="action padding">Clear</button>
   </div>
 </main>
 <script>
@@ -107,8 +110,8 @@ const alphabet = "abcdefghijklmnopqrstuvwxyz",
       number = document.getElementById("number");
 
 function reset() {
-  copy.innerHTML = "Copy";
   copy.classList.remove("copied");
+  copy.innerHTML = "Copy";
 }
 
 number.addEventListener("input", function() {
@@ -161,8 +164,8 @@ generate.addEventListener("click", function() {
 
 copy.addEventListener("click", function() {
   navigator.clipboard.writeText(document.getElementById("result").value);
-  copy.innerHTML = "Copied";
   copy.classList.add("copied");
+  copy.innerHTML = "Copied";
   setTimeout(function() {
     reset();
   }, 3000);

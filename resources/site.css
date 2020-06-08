@@ -30,19 +30,17 @@ main::before {
   top: 50%;
   z-index: -2;
 }
-main > p:first-child {
+main > p:first-child, .margin-block {
   margin-block-start: 0;
 }
 main > p:last-child {
   margin-block-end: 0;
 }
+.align-top {
+  vertical-align: top;
+}
 .break {
   width: 100%;
-}
-.center {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
 }
 .download {
   background: url(/images/download.png) 20px #4caf50 no-repeat;
@@ -53,4 +51,12 @@ main > p:last-child {
 }
 .download:hover {
   background-color: #46a049;
+}
+.flex {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+.text-align {
+  text-align: center;
 }
