@@ -21,13 +21,13 @@ button:disabled {
 button:focus, input:focus {
   outline: none;
 }
-input, .arrows div {
+input, .arrows div, .bottom {
   text-align: center;
 }
 input::-webkit-inner-spin-button {  
   display: none;
 }
-.arrows *, #copy {
+.arrows *, .bottom div {
   position: absolute;
 }
 .arrows div {
@@ -45,28 +45,36 @@ input::-webkit-inner-spin-button {
   display: inline-block;
   margin-top: 4;
 }
-.border {
+.border, .bottom *:not(div) {
   border: 1px solid #bcbcbc;
   border-radius: 5px;
 }
+.bottom *:not(div) {
+  padding-bottom: 9;
+  padding-top: 10;
+}
+.bottom button {
+  background-color: white;
+  font-size: 15;
+  margin-left: 5;
+  padding-left: 10;
+  padding-right: 10;
+  transition-duration: 0.5s;
+}
+.bottom button:not(.copied):hover {
+  background-color: #f7f7f7 !important;
+}
 .copied {
   background-color: #26c281 !important;
-  border-color: #26c281;
+  border-color: #26c281 !important;
   color: white;
   transition-duration: 0.3s !important;
 }
 .down::before {
   border-width: 10 5 0 5;
 }
-.padding {
-  padding-bottom: 9;
-  padding-top: 10;
-}
 .up::before {
   border-width: 0 5 10 5;
-}
-#copy:not(.copied):hover {
-  background-color: #f7f7f7 !important;
 }
 #generate:not(:disabled):hover {
   background-color: #4095c6 !important;
@@ -82,14 +90,18 @@ input::-webkit-inner-spin-button {
       <button id=generate style="background-color: #4eb5f1; border: none; border-radius: 20px; color: white; left: 35; line-height: 25px; padding: 5 20; transition-duration: 0.2s; user-select: none">Generate</button>
     </div>
   </div>
-  <div style="text-align: center">
-    <input id=result value=Result autocomplete=off readonly class="border padding" style="width: 236">
-    <button id=copy class="border padding" style="background-color: white; margin-left: 5; padding-left: 10; padding-right: 10; transition-duration: 0.5s">Copy</button>
+  <div class=bottom>
+    <input id=result autocomplete=off readonly style="width: 236">
+    <div style="display: inline-flex">
+      <button id=copy>Copy</button>
+      <button id=clear>Clear</button>
+    </div>
   </div>
 </main>
 <script>
 const alphabet = "abcdefghijklmnopqrstuvwxyz",
       arrows = ["down", "up"],
+      clear = document.getElementById("clear"),
       copy = document.getElementById("copy"),
       generate = document.getElementById("generate"),
       number = document.getElementById("number");
@@ -149,10 +161,14 @@ generate.addEventListener("click", function() {
 
 copy.addEventListener("click", function() {
   navigator.clipboard.writeText(document.getElementById("result").value);
-  copy.innerHTML = "Copied!";
-  copy.className += " copied";
+  copy.innerHTML = "Copied";
+  copy.classList.add("copied");
   setTimeout(function() {
     reset();
   }, 3000);
+});
+
+clear.addEventListener("click", function() {
+  result.value = "";
 });
 </script>
