@@ -60,9 +60,6 @@ input::-webkit-inner-spin-button {
   color: white;
   transition-duration: 0.3s !important;
 }
-.flex > *:not(.end):not(:last-child) { /* this page only */
-  margin-right: 10;
-}
 .margin {
   margin-right: 5 !important;
 }
@@ -84,6 +81,11 @@ input::-webkit-inner-spin-button {
 #up::before {
   border-bottom-width: 10;
   border-top-width: 0;
+}
+
+/* this page only */
+.flex > *:not(.end):not(:last-child) {
+  margin-right: 10;
 }
 </style>
 <main style="padding-bottom: 35">

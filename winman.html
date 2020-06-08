@@ -18,22 +18,10 @@ li {
 ul {
   padding-inline-start: 18px;
 }
-.break { /* this page only */
-  margin-bottom: 15;
-}
 .heading {
   color: #c23b2c;
   font-weight: 500;
   text-transform: uppercase;
-}
-.hotkeys > *:not(.end):not(:last-child) {
-  margin-right: 10;
-}
-.hotkeys code {
-  line-height: 22px;
-}
-.hotkeys img {
-  object-fit: contain;
 }
 .icon, .icon + span {
   vertical-align: middle;
@@ -54,6 +42,21 @@ ul {
   padding-left: 15;
   padding-right: 15;
 }
+
+/* this page only */
+
+.break {
+  margin-bottom: 15;
+}
+.flex > *:not(.end):not(:last-child) {
+  margin-right: 10;
+}
+.flex code {
+  line-height: 22px;
+}
+.flex img {
+  object-fit: contain;
+}
 </style>
 <main>
   <p class=text-align><img src=images\windows-20.png width=20 height=20 class="align-top margin">Window Management
@@ -67,7 +70,7 @@ ul {
   <hr>
   <img src=images/restore.png class=icon><span>Maximize</span>
   <p><i>Custom hotkeys</i>
-  <div class="flex hotkeys">
+  <div class=flex>
     <img src=images/win.png>
     <img src=images/plus.png>
     <span><code class="key spacebar">Space</code></span>
@@ -82,7 +85,7 @@ ul {
   <hr>
   <img src=images/snap.png class=icon><span>Snap</span>
   <p><i>Better window snapping</i>
-  <div class="flex hotkeys">
+  <div class=flex>
     <img src=images/win.png>
     <img src=images/plus.png>
     <img src=images/controls.png>
