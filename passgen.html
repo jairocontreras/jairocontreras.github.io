@@ -12,6 +12,9 @@ button, input {
 button, .arrow {
   cursor: pointer;
 }
+button {
+  transition-duration: 0.2s;
+}
 button:disabled {
   background-color: #ed4337 !important;
 }
@@ -36,7 +39,6 @@ input::-webkit-inner-spin-button {
   font-size: 15;
   padding-left: 10;
   padding-right: 10;
-  transition-duration: 0.2s;
 }
 .action:not(.copied):hover {
   background-color: #f7f7f7 !important;
@@ -89,14 +91,14 @@ input::-webkit-inner-spin-button {
 }
 </style>
 <main style="padding-bottom: 35">
-  <p class=text-align style="font-size: 20"><img src=images\keys-24.png class="margin align-top">Password Generator</p>
+  <p class=text-align style="font-size: 20"><img src=images\keys-24.png class=align-top style="margin-right: 5">Password Generator</p>
   <div class=flex>
     <input id=number type=number value=1 min=1 max=26 autocomplete=off required class=text-align>
     <div>
       <div id=up class="text-align arrow" style="margin-bottom: 3"></div>
       <div id=down class="text-align arrow"></div>
     </div>
-    <button id=generate class=end style="background-color: #4eb5f1; border: none; border-radius: 20px; color: white; padding-left: 20; padding-right: 20; transition-duration: 0.2s; user-select: none">Generate</button>
+    <button id=generate class=end style="background-color: #4eb5f1; border: none; border-radius: 20px; color: white; padding-left: 20; padding-right: 20; user-select: none">Generate</button>
     <div class=break style="margin-bottom: 25"></div>
     <input id=result autocomplete=off readonly class="text-align margin padding" style="width: 236">
     <button id=copy class="action margin padding">Copy</button>
