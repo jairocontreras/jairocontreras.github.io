@@ -1,4 +1,4 @@
-a, .download:hover {
+a {
   text-decoration: none;
 }
 a:hover {
@@ -34,8 +34,22 @@ main::before {
   top: 50%;
   z-index: -2;
 }
-main > p:first-child {
+main > a:first-of-type {
+  background-image: url(/images/home.png);
+  height: 16;
+  position: absolute;
+  right: 30;
+  width: 16;
+}
+main > p:first-of-type {
   margin-block-start: 0;
+  text-align: center;
+}
+main > p:first-of-type:not(.p) {
+  font-size: 18;
+}
+main > p:first-of-type:not(.p) img {
+  vertical-align: top;
 }
 main > p:last-child {
   margin-block-end: 0;
@@ -52,16 +66,10 @@ main > p:last-child {
 }
 .download:hover {
   background-color: #46a049;
+  text-decoration: none; /* overwrite */
 }
 .flex {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-}
-.title {
-  font-size: 18;
-  text-align: center;
-}
-.title img {
-  vertical-align: top;
 }
