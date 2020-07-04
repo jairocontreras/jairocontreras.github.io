@@ -1,6 +1,6 @@
 <script async src=https://www.googletagmanager.com/gtag/js?id=UA-154409978-1></script>
 <script src=resources/gtag.js></script>
-<meta name=description content="Collection of utilities">
+<meta name=description content="Control windows better">
 <link rel=icon href=images/windows-16.png>
 <link rel=stylesheet href=resources/site.css>
 <title>Window Manager</title>
@@ -11,11 +11,6 @@ hr {
   height: 1;
   margin-bottom: 20;
   margin-top: 20;
-}
-.br {
-  margin-block-end: 0;
-  margin-block-start: 0;
-  margin-top: 10;
 }
 .icon, .icon + span {
   vertical-align: middle;
@@ -29,9 +24,6 @@ hr {
   box-shadow: 0 1px 0 rgba(0,0,0,0.2);
   padding: 2 5;
 }
-.margin {
-  margin-right: 8;
-}
 .spacebar {
   padding-left: 15;
   padding-right: 15;
@@ -39,24 +31,18 @@ hr {
 
 /* this page only */
 
-.break {
-  margin-bottom: 15;
-}
-.flex > *:not(.end):not(:last-child) {
+.flex *:not(.end):not(:last-child) {
   margin-right: 10;
-}
-.flex code {
-  line-height: 22px;
 }
 .flex img {
   object-fit: contain;
 }
 </style>
 <main>
-  <p class="text-align title"><img src=images\windows-20.png width=20 height=20 class="align-top margin">Window Manager
-  <p><img src=images\admin.png class=icon><span>Administrator-level windows require <a href=https://github.com/jairocontreras/windows/blob/master/shell/send%20to/Startup%20(elevated).vbs>elevated privileges</a></span>
-  <p><img src=images\info.png class=icon><span>Designed for the standard desktop configuration</span>
-  <p><img src=images\settings.png class=icon><span>Recommended <a href=https://github.com/jairocontreras/windows/blob/master/registry/entries/snap.reg>system settings</a></span>
+  <p class=title><img src=images/windows-20.png width=20 height=20 style="margin-right: 8">Window Manager
+  <p><img src=images/admin.png class=icon><span>Administrator-level windows require <a href=https://github.com/jairocontreras/windows/blob/master/shell/send%20to/Startup%20(elevated).vbs target=_blank>elevated privileges</a></span>
+  <p><img src=images/info.png class=icon><span>Designed for the standard desktop configuration</span>
+  <p><img src=images/settings.png class=icon><span>Recommended <a href=https://github.com/jairocontreras/windows/blob/master/registry/entries/snap.reg target=_blank>system settings</a></span>
   <hr>
   <img src=images/autosizer.png class=icon><span>AutoSizer</span>
   <p><i>Automatically maximize your favorite applications</i>
@@ -64,14 +50,14 @@ hr {
   <p><a href=https://rebrand.ly/f4pjdx class=download>Download</a>
   <hr>
   <img src=images/restore.png class=icon><span>Maximize</span>
-  <p><i>New hotkeys</i>
+  <p><i>Get these new hotkeys</i>
   <div class=flex>
-    <img src=images/win.png>
+    <img src=images/winlogo.png>
     <img src=images/plus.png>
-    <span><code class="key spacebar">Space</code></span>
+    <code class="key spacebar">Space</code>
     <span class=end>Maximize/Restore</span>
-    <div class=break></div>
-    <span><code class=key>End</code></span>
+    <div class=break style="margin-bottom: 15"></div>
+    <code class=key>End</code>
     <span>Minimize</span>
   </div>
   <p>Hold <code class=key>Shift</code> to unminimize
@@ -81,18 +67,18 @@ hr {
   <img src=images/snap.png class=icon><span>Snap</span>
   <p><i>Snap windows the right way!</i>
   <div class=flex>
-    <img src=images/win.png>
+    <img src=images/winlogo.png>
     <img src=images/plus.png>
     <img src=images/controls.png>
   </div>
-  <p>Hold <code class=key>Shift</code> to extend window
+  <p>Hold <code class=key>Shift</code> to extend
   <p>Last updated 6/29/20
   <p><a href=https://rebrand.ly/z4e7kg class=download>Download</a>
   <hr>
-  <img src=images/workspace.png class="icon margin"><span>Workspace</span>
+  <img src=images/workspace.png class=icon style="margin-right: 8"><span>Workspace</span>
   <p><i>Constrain windows to the visible screen</i>
-  <p class=br>Automatically extend windows to the far edge of the screen when resizing
-  <p class=br>Hold <code class=key>Shift</code> while dragging window to the top edge of the screen to maximize
+  <p>Automatically extend windows to the far edge of the screen when resizing
+  <p>Hold <code class=key>Shift</code> while dragging window to the top edge of the screen to maximize
   <p>Last updated 6/29/20
   <p><a href=https://rebrand.ly/p6r01c class=download>Download</a>
 </main>

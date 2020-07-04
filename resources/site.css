@@ -4,6 +4,10 @@ a, .download:hover {
 a:hover {
   text-decoration: underline;
 }
+a[target=_blank]::after {
+  content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==);
+  margin-left: 5;
+}
 body {
   background-color: #e6e6e6;
   font-family: segoe ui;
@@ -30,14 +34,11 @@ main::before {
   top: 50%;
   z-index: -2;
 }
-main > p:first-child, .margin-block {
+main > p:first-child {
   margin-block-start: 0;
 }
 main > p:last-child {
   margin-block-end: 0;
-}
-.align-top {
-  vertical-align: top;
 }
 .break {
   width: 100%;
@@ -57,9 +58,10 @@ main > p:last-child {
   flex-flow: row wrap;
   justify-content: center;
 }
-.text-align {
-  text-align: center;
-}
 .title {
   font-size: 18;
+  text-align: center;
+}
+.title img {
+  vertical-align: top;
 }

@@ -1,6 +1,6 @@
 <script async src=https://www.googletagmanager.com/gtag/js?id=UA-154409978-1></script>
 <script src=resources/gtag.js></script>
-<meta name=description content="Simple password generator using non-repeating lowercase letters">
+<meta name=description content="Alphabetic, lowercase, and non-repeating">
 <link rel=icon href=/images/keys-16.png>
 <link rel=stylesheet href=resources/site.css>
 <link rel=stylesheet href=https://fonts.googleapis.com/css?family=Roboto>
@@ -30,6 +30,9 @@ input, .action, .arrow {
 }
 input, .action {
   border-color: #bcbcbc;
+}
+input, .arrow {
+  text-align: center;
 }
 input::-webkit-inner-spin-button {  
   display: none;
@@ -62,9 +65,6 @@ input::-webkit-inner-spin-button {
   color: white;
   transition-duration: 0.3s !important;
 }
-.margin {
-  margin-right: 5 !important;
-}
 .padding {
   padding-bottom: 10;
   padding-top: 10;
@@ -84,24 +84,19 @@ input::-webkit-inner-spin-button {
   border-bottom-width: 10;
   border-top-width: 0;
 }
-
-/* this page only */
-.flex > *:not(.end):not(:last-child) {
-  margin-right: 10;
-}
 </style>
 <main style="padding-bottom: 35">
-  <p class="text-align title"><img src=images\keys-24.png class=align-top style="margin-right: 5">Password Generator</p>
+  <p class=title><img src=images/keys-24.png style="margin-right: 5">Password Generator
   <div class=flex>
-    <input id=number type=number value=1 min=1 max=26 autocomplete=off required class=text-align>
-    <div>
-      <div id=up class="text-align arrow" style="margin-bottom: 3"></div>
-      <div id=down class="text-align arrow"></div>
+    <input id=number type=number value=1 min=1 max=26 autocomplete=off required style="margin-right: 10">
+    <div style="margin-right: 10">
+      <div id=up class=arrow style="margin-bottom: 3"></div>
+      <div id=down class=arrow></div>
     </div>
-    <button id=generate class=end style="background-color: #4eb5f1; border: none; border-radius: 20px; color: white; padding-left: 20; padding-right: 20; user-select: none">Generate</button>
+    <button id=generate style="background-color: #4eb5f1; border: none; border-radius: 20px; color: white; padding-left: 20; padding-right: 20; user-select: none">Generate</button>
     <div class=break style="margin-bottom: 25"></div>
-    <input id=result autocomplete=off readonly class="text-align margin padding" style="width: 236">
-    <button id=copy class="action margin padding">Copy</button>
+    <input id=result autocomplete=off readonly class=padding style="margin-right: 5; width: 236">
+    <button id=copy class="action padding" style="margin-right: 5">Copy</button>
     <button id=clear class="action padding">Clear</button>
   </div>
 </main>
