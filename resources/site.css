@@ -66,7 +66,7 @@ main > p:last-child {
 }
 .download:hover {
   background-color: #46a049;
-  text-decoration: none; /* overwrite */
+  text-decoration: none; /* override */
 }
 .flex {
   display: flex;
