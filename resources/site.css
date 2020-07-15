@@ -57,19 +57,25 @@ main > p:last-child {
 .break {
   width: 100%;
 }
-.download {
-  background: url(/images/download.png) 20px #4caf50 no-repeat;
+.button {
+  background-repeat: no-repeat;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
   color: white;
   display: inline-block;
+}
+.button:hover {
+  text-decoration: none; /* override */
+}
+.download {
+  background-color: #4caf50;
+  background-image: url(/images/download.png);
+  background-position: 20;
   padding: 12 20 12 50;
 }
 .download:hover {
   background-color: #46a049;
-  text-decoration: none; /* override */
 }
 .flex {
   display: flex;
-  flex-flow: row wrap;
   justify-content: center;
 }
