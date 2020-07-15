@@ -11,6 +11,16 @@ hr {
   margin-bottom: 20;
   margin-top: 20;
 }
+.heading {
+  color: #c23b2c;
+  font-weight: 500;
+  margin-block-end: 0;
+  margin-bottom: 10;
+  text-transform: uppercase;
+}
+.heading + p {
+  margin-block-start: 0;
+}
 .icon, .icon + span {
   vertical-align: middle;
 }
@@ -41,7 +51,9 @@ hr {
   <hr>
   <img src=images/autosizer.png class=icon><span>AutoSizer</span>
   <p><i>Automatically maximize your favorite applications</i>
-  <p>Last updated 6/29/20
+  <p class=heading>usage
+  <p>Open <code>list.txt</code> and add one executable filename per line
+  <p>Last updated 7/15/20
   <p><a href=https://rebrand.ly/f4pjdx class="button download">Download</a>
   <hr>
   <img src=images/restore.png class=icon><span>Maximize</span>
