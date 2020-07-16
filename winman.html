@@ -11,11 +11,16 @@ hr {
   margin-bottom: 20;
   margin-top: 20;
 }
+li:not(:last-child), .heading {
+  margin-bottom: 10;
+}
+ol {
+  padding-inline-start: 18px;
+}
 .heading {
   color: #c23b2c;
   font-weight: 500;
   margin-block-end: 0;
-  margin-bottom: 10;
   text-transform: uppercase;
 }
 .heading + p {
@@ -52,8 +57,13 @@ hr {
   <img src=images/autosizer.png class=icon><span>AutoSizer</span>
   <p><i>Automatically maximize your favorite applications</i>
   <p class=heading>usage
-  <p>Open <code>list.txt</code> and add one executable filename per line
-  <p>Last updated 7/15/20
+  <ol>
+    <li>Access tray context menu and select <code>Edit</code>
+    <li>Add one executable filename per line
+    <li>(Optional) Add a specific class name
+    <li>Example: <code>explorer cabinetwclass</code>
+  </ol>
+  <p>Last updated 7/16/20
   <p><a href=https://rebrand.ly/f4pjdx class="button download">Download</a>
   <hr>
   <img src=images/restore.png class=icon><span>Maximize</span>
