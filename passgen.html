@@ -84,7 +84,7 @@ input::-webkit-inner-spin-button {
   border-top-width: 0;
 }
 </style>
-<main style="padding-bottom: 35">
+<main>
   <a href=/></a>
   <p><img src=images/keys-24.png style="margin-right: 5">Password Generator
   <div class=flex style="flex-flow: row wrap">
@@ -95,7 +95,8 @@ input::-webkit-inner-spin-button {
     </div>
     <button id=generate style="background-color: #4eb5f1; border: none; border-radius: 20px; color: white; padding-left: 20; padding-right: 20; user-select: none">Generate</button>
     <div class=break style="margin-bottom: 25"></div>
-    <input id=result autocomplete=off readonly class=padding style="margin-right: 5; width: 236">
+    <input id=result autocomplete=off readonly class=padding style="margin-right: 5; transition-duration: 0.3s; width: 236">
+    <div class=break style="margin-bottom: 20"></div>
     <button id=copy class="action padding" style="margin-right: 5">Copy</button>
     <button id=clear class="action padding">Clear</button>
   </div>
@@ -106,7 +107,8 @@ const alphabet = "abcdefghijklmnopqrstuvwxyz",
       clear = document.getElementById("clear"),
       copy = document.getElementById("copy"),
       generate = document.getElementById("generate"),
-      number = document.getElementById("number");
+      number = document.getElementById("number"),
+      result = document.getElementById("result");
 
 function reset() {
   copy.classList.remove("copied");
@@ -152,17 +154,22 @@ generate.addEventListener("click", function() {
         tmp = buffer.indexOf(new_tmp);
     if (tmp == -1) {
       const insert_pos = Math.floor(Math.random() * buffer_len);
-      var result = buffer.substring(0, insert_pos) + new_tmp + buffer.substring(insert_pos, buffer_len);
+      var _result = buffer.substring(0, insert_pos) + new_tmp + buffer.substring(insert_pos, buffer_len);
       break
     }
     else
       charset = charset.replace(new_tmp, "");
   }
-  document.getElementById("result").value = result;
+  result.value = _result;
+});
+
+result.addEventListener("transitionend", function() {
+  this.value = "";
+  this.style.color = "black";
 });
 
 copy.addEventListener("click", function() {
-  navigator.clipboard.writeText(document.getElementById("result").value);
+  navigator.clipboard.writeText(result.value);
   copy.classList.add("copied");
   copy.innerHTML = "Copied";
   setTimeout(function() {
@@ -171,6 +178,6 @@ copy.addEventListener("click", function() {
 });
 
 clear.addEventListener("click", function() {
-  result.value = "";
+  result.style.color = "white";
 });
 </script>
