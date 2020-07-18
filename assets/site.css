@@ -4,10 +4,6 @@ a {
 a:hover {
   text-decoration: underline;
 }
-a[target=_blank]::after {
-  content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==);
-  margin-left: 5;
-}
 body {
   background-color: #e6e6e6;
   font-family: segoe ui;
@@ -56,6 +52,10 @@ main > p:last-child {
 }
 ol {
   padding-inline-start: 18px;
+}
+.a::after {
+  content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==);
+  margin-left: 5;
 }
 .break {
   width: 100%;
