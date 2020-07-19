@@ -10,11 +10,17 @@ td:nth-child(2) {
 tr {
   line-height: 35px;
 }
-
-/* this page only */
-
-.button:hover {
-  background-color: #2196f3 !important;
+.button {
+  background-position: 10;
+  padding-bottom: 4;
+  padding-right: 10;
+  padding-top: 4;
+}
+.feedback:hover {
+  background-color: #30b4e5 !important;
+}
+.source:hover {
+  background-color: #e9ebef !important;
 }
 </style>
 <main>
@@ -23,11 +29,11 @@ tr {
   <table>
     <tr>
       <td><img src=images/shell.png></td>
-      <td><a href=https://github.com/jairocontreras/windows/tree/master/shell target=_blank class=a>Context Menu Tools</a></td>
+      <td><a href=https://github.com/jairocontreras/windows/tree/master/shell target=_blank>Context Menu Tools</a></td>
     </tr>
     <tr>
       <td><img src=images/registry.png></td>
-      <td><a href=https://github.com/jairocontreras/windows/tree/master/registry target=_blank class=a>Registry Settings</a></td>
+      <td><a href=https://github.com/jairocontreras/windows/tree/master/registry target=_blank>Registry Settings</a></td>
     </tr>
     <tr>
       <td><img src=images/iconresview.png></td>
@@ -55,16 +61,19 @@ tr {
         <table class=table>
           <tr>
             <td><img src=images/search.png class=resize></td>
-            <td><a href=https://chrome.google.com/webstore/detail/options-for-google-search/nnmhaffjkfbpoglfeegnkcblgkmlhfgi target=_blank class=a>Options for Google Search</a></td>
+            <td><a href=https://chrome.google.com/webstore/detail/options-for-google-search/nnmhaffjkfbpoglfeegnkcblgkmlhfgi target=_blank>Options for Google Search</a></td>
           </tr>
           <tr>
             <td><img src=images/picture.png></td>
-            <td><a href=https://chrome.google.com/webstore/detail/set-as-desktop-background/kpnohlcoegedfpikkadcoljdjnijbelp target=_blank class=a>Set as desktop background</a></td>
+            <td><a href=https://chrome.google.com/webstore/detail/set-as-desktop-background/kpnohlcoegedfpikkadcoljdjnijbelp target=_blank>Set as desktop background</a></td>
           </tr>
         </table>
       </td>
     </tr>
   </table>
-  <p style="margin-bottom: 30; text-align: center"><a href=https://www.paypal.me/jairocontreras target=_blank><img src=images/donate.gif></a>
-  <p style="bottom: 15; position: absolute; right: 15"><a href=mailto:f0019@outlook.com class=button style="background-color: #4ebfe9; background-image: url(/images/chat.png); background-position: 10; padding: 4 10 4 30">Feedback</a>
+  <p style="text-align: center"><a href=https://www.paypal.me/jairocontreras target=_blank class=a><img src=images/donate.gif></a>
+  <div style="display: flex; justify-content: flex-end">
+    <a href=https://github.com/jairocontreras/ahk target=_blank class="button source" style="background-color: #f3f4f6; background-image: url(images/github.png); color: black; margin-right: 10; padding-left: 32">Source</a>
+    <a href=mailto:f0019@outlook.com class="button feedback" style="background-color: #4ebfe9; background-image: url(/images/chat.png); color: white; padding-left: 30">Feedback</a>
+  </div>
 </main>

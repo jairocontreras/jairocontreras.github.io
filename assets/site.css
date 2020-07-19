@@ -1,7 +1,11 @@
 a {
   text-decoration: none;
 }
-a:hover {
+a:not(.a):not(.button)[target=_blank]::after {
+  content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==);
+  margin-left: 5;
+}
+a:not(.button):hover {
   text-decoration: underline;
 }
 body {
@@ -53,34 +57,23 @@ main > p:last-child {
 ol {
   padding-inline-start: 18px;
 }
-.a::after {
-  content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==);
-  margin-left: 5;
-}
 .break {
   width: 100%;
 }
 .button {
   background-repeat: no-repeat;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.2), 0 1px 5px 0 rgba(0,0,0,0.12);
-  color: white;
   display: inline-block;
-}
-.button:hover {
-  text-decoration: none; /* override */
 }
 .download {
   background-color: #4caf50;
   background-image: url(/images/download.png);
   background-position: 20;
+  color: white;
   padding: 12 20 12 50;
 }
 .download:hover {
   background-color: #46a049;
-}
-.flex {
-  display: flex;
-  justify-content: center;
 }
 .heading {
   color: #c23b2c;
