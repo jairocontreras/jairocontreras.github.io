@@ -1,0 +1,1 @@
+you will also need to download iconresview.png from images folder and create the folder in your computer
