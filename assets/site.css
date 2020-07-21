@@ -75,6 +75,10 @@ ol {
 .download:hover {
   background-color: #46a049;
 }
+.flex {
+  display: flex;
+  justify-content: center;
+}
 .heading {
   color: #c23b2c;
   font-weight: 500;
