@@ -5,7 +5,7 @@ a:not(.a):not(.button)[target=_blank]::after {
   content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==);
   margin-left: 5;
 }
-a:not(.button):hover {
+a:not(.button):hover, code[title], span[title] {
   text-decoration: underline;
 }
 body {
@@ -13,6 +13,9 @@ body {
   font-family: segoe ui;
   margin-bottom: 30;
   margin-top: 30;
+}
+code[title], span[title] {
+  cursor: help;
 }
 li {
   margin-bottom: 10;
