@@ -41,7 +41,7 @@ main > a:first-of-type {
   background-image: url(/images/home.png);
   height: 15;
   position: absolute;
-  right: 30;
+  left: 30;
   width: 16;
 }
 main > p:first-of-type {

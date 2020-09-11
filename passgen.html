@@ -5,7 +5,7 @@
 <link rel=stylesheet href=https://fonts.googleapis.com/css?family=Roboto>
 <title>Password Generator</title>
 <style>
-button, input {
+button, input, select {
   font: 16px sans-serif;
 }
 button, .arrow {
@@ -14,10 +14,7 @@ button, .arrow {
 button {
   transition-duration: 0.2s;
 }
-button:disabled {
-  background-color: #ed4337 !important;
-}
-button:focus, input:focus {
+button:focus, input:focus, select:focus {
   outline: none;
 }
 input, .action, .arrow, .arrow::before {
@@ -42,7 +39,7 @@ input::-webkit-inner-spin-button {
   width: 70;
 }
 .action:not(.copied):hover {
-  background-color: #f7f7f7 !important;
+  background-color: #f7f7f7;
 }
 .arrow {
   background-color: #ccc;
@@ -57,15 +54,22 @@ input::-webkit-inner-spin-button {
   display: inline-block;
   margin-top: 4;
 }
-.copied {
-  background-color: #26c281 !important;
-  border-color: #26c281 !important;
+.copied, #generate {
   color: white;
-  transition-duration: 0.3s !important;
+}
+.copied, #result {
+  transition-duration: 0.3s;
+}
+.copied {
+  background-color: #26c281;
+  border-color: #26c281;
 }
 .padding {
   padding-bottom: 10;
   padding-top: 10;
+}
+#copy, #result {
+  margin-right: 5;
 }
 #down::before, #up::before {
   border-left-width: 5;
@@ -75,7 +79,7 @@ input::-webkit-inner-spin-button {
   border-bottom-width: 0;
   border-top-width: 10;
 }
-#generate:not(:disabled):hover {
+#generate:hover {
   background-color: #4095c6 !important;
 }
 #up::before {
@@ -87,49 +91,52 @@ input::-webkit-inner-spin-button {
   <a href=/></a>
   <p><img src=images/keys.png class=icon><span>Password Generator</span>
   <div class=flex style="flex-flow: row wrap">
-    <input id=number type=number value=1 min=1 max=26 autocomplete=off required style="margin-right: 10">
-    <div style="margin-right: 10">
+    <select id=number style="margin-right: 10; padding-left: 5; padding-right: 5">
+      <option selected>1</option>
+    </select>
+    <div style="margin-right: 15">
       <div id=up class=arrow style="margin-bottom: 3"></div>
       <div id=down class=arrow></div>
     </div>
-    <button id=generate style="background-color: #4eb5f1; border: none; border-radius: 20px; color: white; padding-left: 20; padding-right: 20; user-select: none">Generate</button>
+    <button id=generate style="background-color: #4eb5f1; border: none; border-radius: 20px; padding-left: 20; padding-right: 20">Generate</button>
     <div class=break style="margin-bottom: 25"></div>
-    <input id=result autocomplete=off readonly class=padding style="margin-right: 5; transition-duration: 0.3s; width: 236">
+    <input id=result autocomplete=off readonly class=padding style="width: 236">
     <div class=break style="margin-bottom: 20"></div>
-    <button id=copy class="action padding" style="margin-right: 5">Copy</button>
+    <button id=copy class="action padding">Copy</button>
     <button id=clear class="action padding">Clear</button>
   </div>
 </main>
 <script>
 const alphabet = "abcdefghijklmnopqrstuvwxyz",
       arrows = ["down", "up"],
-      clear = document.getElementById("clear"),
-      copy = document.getElementById("copy"),
-      generate = document.getElementById("generate"),
       number = document.getElementById("number"),
-      result = document.getElementById("result");
+      generate = document.getElementById("generate"),
+      result = document.getElementById("result"),
+      copy = document.getElementById("copy"),
+      clear = document.getElementById("clear");
+var options = "";
 
 function reset() {
   copy.classList.remove("copied");
   copy.innerHTML = "Copy";
 }
 
-number.addEventListener("input", function() {
-  generate.disabled = (this.validity.valid ? false : true);
-});
+for (let i = 2; i < 27; i++) {
+  options += "<option>" + i + "</option>";
+}
+number.innerHTML += options;
 
 arrows.forEach(function(item) {
   document.getElementById(item).addEventListener("click", function() {
     if ((item == "down" && number.value < 2) || (item == "up" && number.value > 25))
       return
     (item == "down" ? number.value-- : number.value++);
-    number.dispatchEvent(new Event("input"));
   });
 });
 
 generate.addEventListener("click", function() {
   reset();
-  const length = document.querySelector("input").value,
+  const length = number.value,
         buffer_len = length-1;
   var buffer = "",
       charset = alphabet;
@@ -178,5 +185,6 @@ copy.addEventListener("click", function() {
 
 clear.addEventListener("click", function() {
   result.style.color = "white";
+  reset();
 });
 </script>
