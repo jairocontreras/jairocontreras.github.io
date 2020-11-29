@@ -42,6 +42,7 @@ main > a:first-of-type {
   height: 15;
   position: absolute;
   left: 30;
+  margin-top: 5;
   width: 16;
 }
 main > p:first-of-type {
