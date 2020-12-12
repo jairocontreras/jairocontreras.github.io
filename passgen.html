@@ -54,6 +54,9 @@ input::-webkit-inner-spin-button {
   display: inline-block;
   margin-top: 4;
 }
+.break {
+  width: 100%;
+}
 .copied, #generate {
   color: white;
 }
@@ -90,7 +93,7 @@ input::-webkit-inner-spin-button {
 <main>
   <a href=/></a>
   <p><img src=images/keys.png class=icon><span>Password Generator</span>
-  <div class=flex style="flex-flow: row wrap">
+  <div class=flex style="flex-wrap: wrap">
     <select id=number autocomplete=off style="margin-right: 10; padding-left: 5; padding-right: 5"></select>
     <div style="margin-right: 15">
       <div id=up class=arrow style="margin-bottom: 3"></div>

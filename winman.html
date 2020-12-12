@@ -11,7 +11,14 @@ hr {
   margin-bottom: 20;
   margin-top: 20;
 }
-.flex *:not(.end):not(:last-child) {
+table, .table code {
+  margin-left: auto;
+  margin-right: auto;
+}
+td:nth-child(3) {
+  text-align: center;
+}
+.flex > *:not(:last-child) {
   margin-right: 10;
 }
 .flex img {
@@ -30,9 +37,15 @@ hr {
   box-shadow: 0 1px 0 rgba(0,0,0,0.2);
   padding: 2 5;
 }
-.spacebar {
+.space {
   padding-left: 15;
   padding-right: 15;
+}
+.table div * {
+  display: table;
+}
+.table div *:not(:last-child) {
+  margin-bottom: 15;
 }
 </style>
 <main>
@@ -72,29 +85,48 @@ hr {
   <hr>
   <img src=images/maximize.png class=icon><span>Maximize</span>
   <p><i>Custom hotkeys</i>
-  <div class=flex style="flex-flow: row wrap">
+  <div class="flex table">
     <img src=images/winlogo.png>
     <img src=images/plus.png>
-    <code class="key spacebar">Space</code>
-    <span class=end>Maximize/Restore</span>
-    <div class=break style="margin-bottom: 15"></div>
-    <code class=key>End</code>
-    <span>Minimize</span>
+    <div>
+      <code class="key space">Space</code>
+      <code class=key>End</code>
+      <code class=key>Home</code>
+    </div>
+    <div>
+      <span>Maximize/Restore</span>
+      <span>Minimize</span>
+      <span>Unminimize</span>
+    </div>
   </div>
-  <p>Hold <code class=key>Shift</code> to unminimize
   <hr>
   <img src=images/prison.png class=icon><span>Prison</span>
   <p><i>Constrain windows to the visible screen</i>
   <hr>
   <img src=images/snap.png class=icon><span>Snap</span>
-  <p><i>Snap windows the right way!</i>
-  <div class=flex>
-    <img src=images/winlogo.png>
-    <img src=images/plus.png>
-    <img src=images/controls.png>
-  </div>
-  <p>Hold <code class=key>Shift</code> to extend
-  <p>Press <code class=key>Numpad 5</code> to center
+  <p><i>Snap windows the right way!</i></p>
+  <table style="border-spacing: 8 16">
+    <tr>
+      <td><img src=images/winlogo.png>
+      <td><img src=images/plus.png>
+      <td><img src=images/controls.png>
+      <td>Snap
+    <tr>
+      <td>
+      <td>
+      <td><div class=flex><code class=key>Shift</code><img src=images/plus.png><img src=images/stretch.png></div>
+      <td>Extend
+    <tr>
+      <td>
+      <td>
+      <td><div class=flex><code class=key>Shift</code><img src=images/plus.png><code class="key space">Space</code></div>
+      <td>Extend all
+    <tr>
+      <td>
+      <td>
+      <td><code class=key>C</code>
+      <td>Center
+  </table>
   <hr>
   <img src=images/stretch.png class=icon><span>Stretch</span>
   <p><i>Automatically resize windows to fill to the edge of the screen</i>
