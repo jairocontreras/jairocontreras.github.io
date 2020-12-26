@@ -25,7 +25,6 @@ td:nth-child(3) {
   object-fit: contain;
 }
 .heading {
-  margin-block-end: 0;
   margin-bottom: 10;
 }
 .heading + p {
@@ -66,10 +65,9 @@ td:nth-child(3) {
   <p>To exclude windows from updating tray icon:
   <ol>
     <li>Create <code>exceptions.txt</code>
-    <li>Enter <code>executable <span title="Optional; Multiple allowed">class</span></code> <i style="color: green">*hover for details</i>
+    <li>Enter <code>executable <span title="Optional; add one per space">class</span></code> <i style="color: green">*hover for details</i>
     <li>Example <code>explorer <span title=Taskbar>shell_traywnd<span></code>
-    <li>Add one item per line
-    <li>Restart app for changes to take effect
+    <li>Add one per line
   </ol>
   <hr>
   <img src=images/autosizer.png class=icon><span>AutoSizer</span>
@@ -80,7 +78,7 @@ td:nth-child(3) {
     <li>Create <code>exceptions.txt</code>
     <li>Enter <code>executable,<span title=Optional>title</span></code> <i style="color: green">*hover for details</i>
     <li>Example <code>applicationframehost,calculator</code>
-    <li>Add one item per line
+    <li>Add one per line
   </ol>
   <hr>
   <img src=images/maximize.png class=icon><span>Maximize</span>
@@ -141,7 +139,7 @@ td:nth-child(3) {
   <p><img src=images/registry.png class=icon><span>Recommended <a href=assets/stretch.reg>system settings</a></span>
   <hr>
   <img src=images/workspace.png class=icon><span>Workspace</span>
-  <p><i>Automatically restore windows to the visible screen (alternative to Prison) </i>
+  <p><i>Automatically restore windows to the visible screen</i>
   <p>Hold <code class=key>Shift</code> while dragging to the top edge to maximize
   <p><img src=images/registry.png class=icon><span>Recommended <a href=assets/workspace.reg>system settings</a></span>
   <p><a href=https://github.com/jairocontreras/autohotkey target=_blank class="button download">Download</a>
