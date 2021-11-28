@@ -52,8 +52,8 @@ td:nth-child(3) {
   <p><img src=images/windows.png class=icon><span>Window Manager</span>
   <p><img src=images/autohotkey.png class=icon><span>Install <a href=https://www.autohotkey.com target=_blank>AutoHotkey</a></span>
   <p><img src=images/admin.png class=icon><span>Run as administrator</span>
-  <p><img src=images/taskschd.png class=icon><span>Add to <a href=https://github.com/jairocontreras/windows/tree/master/shell/send%20to/Startup%20(elevated) target=_blank>system startup</a>
-  <p><img src=images/info.png class=icon><span>Delay scheduled task for 3+ seconds (recommended)</span>
+  <p><img src=images/taskschd.png class=icon><span>Add to <a href=https://github.com/jairocontreras/windows/tree/master/send%20to/Startup%20(admin) target=_blank>system startup</a>
+  <p><img src=images/info.png class=icon><span>(<span title="Recommended for system tray icon consistency">Optional</span>) Delay scheduled task for at least 3 seconds</span>
   <hr>
   <img src=images/alwaysontop.png class=icon><span>Always on Top</span>
   <div class=flex>
@@ -61,23 +61,13 @@ td:nth-child(3) {
     <img src=images/plus.png>
     <code class=key>Z</code>
   </div>
-  <p class=heading>usage
-  <p>To exclude windows from updating tray icon:
-  <ol>
-    <li>Create <code>exceptions.txt</code>
-    <li>Enter <code>executable <span title="Optional; add one per space">class</span></code> <i style="color: green">*hover for details</i>
-    <li>Example <code>explorer <span title=Taskbar>shell_traywnd<span></code>
-    <li>Add one per line
-  </ol>
   <hr>
   <img src=images/autosizer.png class=icon><span>AutoSizer</span>
-  <p><i>Automatically maximize windows</i>
+  <p><i>Automatically maximize favorite applications</i>
   <p class=heading>usage
-  <p>To exclude applications:
   <ol>
-    <li>Create <code>exceptions.txt</code>
-    <li>Enter <code>executable,<span title="Optional; add one per comma">title</span></code> <i style="color: green">*hover for details</i>
-    <li>Example <code>applicationframehost,calculator</code>
+    <li>Open <code>autosizer\apps.txt</code>
+    <li>Enter executable <code>filename</code>
     <li>Add one per line
   </ol>
   <hr>
@@ -133,14 +123,14 @@ td:nth-child(3) {
       <td><code class=key>C</code>
       <td>Center
   </table>
+  <p><img src=images/regedit_1.png class=icon><span>Recommended system settings found in <code>snap</code> folder</span>
+  <p><img src=images/monitor.png class=icon><span>Multi-monitor version found in <code>alternate</code> folder</span>
   <hr>
   <img src=images/stretch.png class=icon><span>Stretch</span>
   <p><i>Automatically resize windows to fill to the edge of the screen</i>
-  <p><img src=images/regedit_1.png class=icon><span>Recommended <a href=assets/stretch.reg>system settings</a></span>
   <hr>
   <img src=images/workspace.png class=icon><span>Workspace</span>
   <p><i>Automatically restore windows to the visible screen</i>
-  <p>Hold <code class=key>Shift</code> while dragging to the top edge to maximize
-  <p><img src=images/regedit_1.png class=icon><span>Recommended <a href=assets/workspace.reg>system settings</a></span>
-  <p><a href=https://github.com/jairocontreras/autohotkey target=_blank class="button download">Download</a>
+  <p>Hold <code class=key>Shift</code> while moving towards the top edge to maximize
+  <p><a href=https://github.com/jairocontreras/autohotkey/tree/master/window%20manager target=_blank class="button download">Download</a>
 </main>

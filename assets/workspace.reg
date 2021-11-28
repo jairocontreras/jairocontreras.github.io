@@ -1,9 +1,0 @@
-Windows Registry Editor Version 5.00
-
-; SIGN OUT required
-; TURN OFF these settings
-; 1. maximize when you drag to the top edge of the screen
-; 2. snap when you drag to the left or right edges of the screen
-
-[HKEY_CURRENT_USER\Control Panel\Desktop]
-"DockMoving"="0"
