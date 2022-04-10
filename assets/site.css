@@ -52,11 +52,6 @@ main > p:first-of-type {
 main > p:first-of-type:not(.p) {
   font-size: 18;
 }
-main > p:last-child {
-  margin-block-end: 0;
-  margin-top: 20;
-  text-align: center;
-}
 ol {
   padding-inline-start: 18px;
 }
@@ -92,4 +87,8 @@ span[title] {
 }
 .icon {
   margin-right: 8;
+}
+.last {
+  margin-block-end: 0;
+  text-align: center;
 }
