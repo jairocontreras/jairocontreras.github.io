@@ -15,8 +15,13 @@ a:not(.button):hover {
 div {
   margin-left: 20;
 }
-.button:hover {
-  background-color: #f3f4f6 !important;
+#github::before {
+  content: url(images/github.png);
+  margin-right: 8;
+  vertical-align: -2;
+}
+#github:hover {
+  background: #f3f4f6 !important;
 }
 </style>
 <main>
@@ -34,5 +39,5 @@ div {
     <p><img src=images/set_as_desktop_background.png><a href=https://chrome.google.com/webstore/detail/set-as-desktop-background/kpnohlcoegedfpikkadcoljdjnijbelp target=_blank>Set as desktop background</a>
   </div>
   <p><img src=images/password_generator.png style="height: 24"><a href=password_generator.html>Password Generator</a>
-  <p style="text-align: right"><a class=button href=https://github.com/jairocontreras style="background: #f6f8fa url(images/github.png) top 6px left 10px no-repeat; border: 1px solid rgba(27,31,36,.15); border-radius: 6px; box-shadow: 0 1px 0 rgba(27,31,36,.04), inset 0 1px 0 rgba(255,255,255,.25); color: #24292f; display: inline-block; font-size: 14; font-weight: 500; padding: 5 10 5 32">View on GitHub</a>
+  <p style="text-align: right"><a class=button href=https://github.com/jairocontreras id=github style="background: #f6f8fa; border: 1px solid rgba(27,31,36,.15); border-radius: 6px; box-shadow: 0 1px 0 rgba(27,31,36,.04), inset 0 1px 0 rgba(255,255,255,.25); color: #24292f; display: inline-block; font-size: 14; font-weight: 500; padding: 5 10">View on GitHub</a>
 </main>
