@@ -3,6 +3,9 @@
 <link rel=stylesheet href=style/hotkeys.css>
 <title>Window Manager</title>
 <style>
+body {
+  overflow-y: scroll;
+}
 hr {
   margin-bottom: 10;
 }
@@ -30,7 +33,7 @@ li:not(:last-of-type) {
   transform: rotate(180deg);
 }
 #content, #expand::after {
-  transition-duration: .5s;
+  transition-duration: 0.5s;
 }
 #expand::after, #ul li::marker {
   color: #5a5a5a;

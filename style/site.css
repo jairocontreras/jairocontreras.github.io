@@ -7,8 +7,11 @@ a[href="/"] {
 a[href="/"] + p, .center {
   text-align: center;
 }
-body {
+body, button, input, select {
   font-family: segoe ui;
+}
+body {
+  background: url(/images/background.png) center / cover fixed;
   margin-bottom: 25;
   margin-top: 25;
 }
@@ -26,9 +29,10 @@ img:has(+ :is(a, span)) {
   margin-right: 8;
 }
 main {
-  border: 1px outset rgba(193,202,214,.3);
+  background: white;
+  border: 1px outset rgba(193, 202, 214, 0.3);
   border-radius: 20px;
-  box-shadow: 0 4px 12px -5px rgba(62,65,90,.1);
+  box-shadow: 0 4px 12px -5px rgba(62, 65, 90, 0.1);
   margin-left: auto;
   margin-right: auto;
   padding: 30 50;
