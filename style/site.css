@@ -11,7 +11,7 @@ body, button, input, select {
   font-family: segoe ui;
 }
 body {
-  background: url(/images/background.png) center / cover fixed;
+  background: url(/images/background.png) center / cover;
   margin-bottom: 25;
   margin-top: 25;
 }
