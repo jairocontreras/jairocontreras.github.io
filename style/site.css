@@ -38,10 +38,10 @@ main {
   padding: 30 50;
   width: 550;
 }
-main > p:first-of-type {
+p:first-of-type {
   margin-block-start: 0;
 }
-main > p:last-of-type:not(:first-of-type) {
+p:last-of-type:not(:first-of-type), .margin-b {
   margin-block-end: 0;
 }
 .break {

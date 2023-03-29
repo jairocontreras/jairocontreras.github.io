@@ -1,0 +1,99 @@
+body {
+  background-attachment: fixed;
+}
+code {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+  padding: 2 5;
+}
+hr {
+  margin-bottom: 10;
+}
+li {
+  margin-bottom: 5;
+}
+ol, ul {
+  margin-top: 10;
+}
+ol:not(div ol), ul {
+  padding-inline-start: 20px;
+}
+ol ul {
+  list-style: lower-alpha;
+  margin-top: 5;
+}
+.break, .position p {
+  margin-bottom: 12;
+}
+.collapse::after {
+  transform: rotate(180deg);
+}
+.i {
+  font-style: italic;
+}
+.margin-r {
+  margin-right: 2;
+}
+.plus {
+  border: 1px solid;
+  border-radius: 100%;
+  height: 13;
+  margin-left: 15;
+  margin-right: 15;
+  position: relative;
+  width: 13;
+}
+.plus::before, .plus::after {
+  background: black;
+  bottom: 0;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.plus::before {
+  margin: 2 auto;
+  width: 1;
+}
+.plus::after {
+  height: 1;
+  margin: auto 2;
+}
+.position {
+  position: absolute;
+}
+.position p {
+  margin-block-start: 0;
+}
+.winlogo {
+  align-items: center;
+}
+.winlogo::before {
+  content: url(/images/winlogo.png);
+}
+#content, #expand::after {
+  transition-duration: 0.5s;
+}
+#expand::after {
+  color: #5a5a5a;
+}
+#expand::after {
+  content: "\25bc";
+  display: inline-block;
+  font-size: 12;
+  margin-left: 5;
+  transition-property: transform;
+}
+#expand:hover {
+  text-decoration: underline;
+}
+#extend span {
+  font-size: 14;
+}
+#ul li::before {
+  content: "-";
+  margin-left: -10;
+  position: absolute;
+}

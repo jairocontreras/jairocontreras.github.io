@@ -1,0 +1,98 @@
+<link rel=icon href=images/fav_ahk.png>
+<link rel=stylesheet href=style/site.css>
+<link rel=stylesheet href=style/ahk.css>
+<title>AutoHotkey Scripts</title>
+<main>
+  <a href=/></a>
+  <p><img src=images/ahk.png><span>AutoHotkey Scripts</span>
+  <hr>
+  <p><img src=images/icon_resource_viewer.png><span>Icon Resource Viewer</span>
+  <p class=center><img src=images/screenshot.png>
+  <p class=i>Supported file types: ani, cpl, cur, dll, exe, ico, scr
+  <hr>
+  <p><img src=images/media.png><span>Media Controls</span>
+  <div class="flex winlogo">
+    <span class=plus></span>
+    <div class=flex style="position: relative; width: 102">
+      <code>Enter</code>
+      <div class=break></div>
+      <code>Ctrl</code>
+      <span style="margin-left: 5; margin-right: 5">+</span>
+      <code class=margin-r>&#8592;</code>
+      <code>&#8594;</code>
+      <div class=position style="left: 120; top: -2">
+        <p>Play/pause
+        <p>Previous/next
+      </div>
+    </div>
+  </div>
+  <hr>
+  <p><img src=images/system_tray_cleaner.png><span>System Tray Cleaner</span>
+  <p class=i>Automatically remove unwanted system tray icons
+  <p class=margin-b>How to use:
+  <ol>
+    <li>Create <i>"apps.txt"</i>
+    <li>Enter <i>executable</i>, one per line
+    <li>Run script before opening app
+  </ol>
+  <hr>
+  <p><img src=images/window_manager.png><span>Window Manager</span>
+  <div class="flex winlogo">
+    <span class=plus></span>
+    <div class=flex style="padding-top: 24; position: relative; width: 65">
+      <code class=margin-r>&#8592;</code>
+      <code class=margin-r>&#8595;</code>
+      <code class=position style="top: 0">&#8593;</code>
+      <code>&#8594;</code>
+      <div class=break></div>
+      <code>C</code>
+      <div class=break></div>
+      <code>Space</code>
+      <div class=break></div>
+      <code>End</code>
+      <div class=break></div>
+      <code>Home</code>
+      <div class=break></div>
+      <code>Z</code>
+      <div class=position style="left: 100; top: 25; width: 190">
+        <p>Snap<span id=extend><span class=i> (Hold </span><code>Shift</code><span class=i> to extend</span>)</span>
+        <p>Center
+        <p>Maximize
+        <p>Minimize
+        <p>Restore
+        <p>Always on top
+      </div>
+    </div>
+  </div>
+  <p class=margin-b>Workspace
+  <ul id=ul style="list-style: none; padding-inline-start: 10px">
+    <li>Restore to the visible screen when moving
+    <li>Stretch to fill to the edges of the screen when resizing
+  </ul>
+  <p><b>Requirements</b>
+  <p><img src=images/admin.png><span>Run as administrator</span>
+  <p><img src=images/taskschd.png><span id=expand style="cursor: pointer">Add to startup using Task Scheduler</span>
+  <div id=content style="height: 0; overflow: hidden; transition-property: height; transition-timing: ease-out">
+    <ol>
+      <li>Create Task
+      <li>General
+        <ul>
+          <li>Name: <i>"script.ahk"</i>
+          <li>Run with highest privileges
+        </ul>
+      <li>Triggers
+        <ul>
+          <li>Begin the task: At log on
+          <li>Delay task for: 1 second (for system tray icon to show)
+        </ul>
+      <li>Actions
+        <ul>
+          <li>Program/script: <i>"path_to_AutoHotkey.exe"</i>
+          <li>Add arguments (optional): <i>"path_to_script.ahk"</i>
+        </ul>
+    </ol>
+    <p style="margin-left: 22">Or run the following command as administrator:
+    <p class=i style="background: #f5f4ef; border: 2px dashed #c9baa7; color: #31808c; padding: 20">schtasks /create /tn "<b>script.ahk</b>" /tr "\"<b>path_to_AutoHotkey.exe</b>\" \"<b>path_to_script.ahk</b>\"" /sc onlogon /delay 0000:01 /rl highest
+  </div>
+</main>
+<script src=script/ahk.js></script>

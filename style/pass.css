@@ -1,0 +1,36 @@
+body {
+  background-image: url(/images/security.webp);
+}
+button, input, select {
+  font-size: 16; /* same as body */
+  padding-bottom: 10;
+  padding-top: 10;
+}
+input, select, .actions {
+  border-color: #bcbcbc;
+}
+input, .actions {
+  border-style: solid;
+  border-radius: 5px;
+  border-width: 1;
+}
+button {
+  cursor: pointer;
+}
+input:focus, select:focus {
+  outline: none;
+}
+.actions {
+  font-size: 15;
+  padding-left: 15;
+  padding-right: 15;
+}
+.actions:hover {
+  background: #f7f7f7;
+}
+.break {
+  margin-top: 20;
+}
+#generate:hover {
+  background: #4095c6 !important;
+}
