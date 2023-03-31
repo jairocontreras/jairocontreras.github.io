@@ -8,6 +8,9 @@ a[target=_blank]::after {
 a:not(#github):hover {
   text-decoration: underline;
 }
+div {
+  margin-left: 20;
+}
 #github::before {
   content: url(/images/github.png);
   margin-right: 8;
