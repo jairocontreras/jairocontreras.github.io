@@ -1,21 +1,10 @@
-a {
-  text-decoration: none;
-}
 a[target=_blank]::after {
   content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==);
   margin-left: 5;
 }
-a:not(#github):hover {
+a:hover {
   text-decoration: underline;
 }
 div {
   margin-left: 20;
-}
-#github::before {
-  content: url(/images/github.png);
-  margin-right: 8;
-  vertical-align: -2;
-}
-#github:hover {
-  background: #f3f4f6 !important;
 }

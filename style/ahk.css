@@ -23,6 +23,9 @@ ol ul {
   list-style: lower-alpha;
   margin-top: 5;
 }
+ul {
+  list-style: none;
+}
 .break, .position p {
   margin-bottom: 12;
 }
@@ -76,6 +79,11 @@ ol ul {
 #content, #expand::after {
   transition-duration: 0.5s;
 }
+#dash li::before {
+  content: "-";
+  margin-left: -10;
+  position: absolute;
+}
 #expand::after {
   color: #5a5a5a;
 }
@@ -87,13 +95,19 @@ ol ul {
   transition-property: transform;
 }
 #expand:hover {
-  text-decoration: underline;
+  color: #0082e0 !important;
 }
 #extend span {
   font-size: 14;
 }
-#ul li::before {
-  content: "-";
-  margin-left: -10;
-  position: absolute;
+#github::before {
+  content: url(/images/github.png);
+  margin-right: 8;
+  vertical-align: -2;
+}
+#github:hover {
+  background: #f3f4f6 !important;
+}
+#icon > li {
+  margin-bottom: 10;
 }

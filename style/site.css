@@ -1,3 +1,6 @@
+a {
+  text-decoration: none;
+}
 a[href="/"] {
   background: url(/images/return.png);
   height: 20;

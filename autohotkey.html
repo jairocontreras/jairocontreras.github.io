@@ -65,34 +65,37 @@
     </div>
   </div>
   <p class=margin-b>Workspace
-  <ul id=ul style="list-style: none; padding-inline-start: 10px">
+  <ul id=dash style="padding-inline-start: 10px">
     <li>Restrict to the screen when moving
     <li>Stretch to fill to the edges of the screen when resizing
   </ul>
-  <p><b>Requirements</b>
-  <p><img src=images/admin.png><span>Run as administrator</span>
-  <p><img src=images/taskschd.png><span id=expand style="cursor: pointer">Add to startup using Task Scheduler</span>
-  <div id=content style="height: 0; overflow: hidden; transition-property: height; transition-timing: ease-out">
-    <ol>
-      <li>Create Task
-      <li>General
-        <ul>
-          <li>Name: <i>"script.ahk"</i>
-          <li>Run with highest privileges
-        </ul>
-      <li>Triggers
-        <ul>
-          <li>Begin the task: At log on
-          <li>Delay task for: 1 second (for system tray icon to show)
-        </ul>
-      <li>Actions
-        <ul>
-          <li>Program/script: <i>"path_to_AutoHotkey.exe"</i>
-          <li>Add arguments (optional): <i>"path_to_script.ahk"</i>
-        </ul>
-    </ol>
-    <p style="margin-left: 22">Or run the following command as administrator:
-    <p class=i style="background: #f5f4ef; border: 2px dashed #c9baa7; color: #31808c; padding: 20">schtasks /create /tn "<b>script.ahk</b>" /tr "\"<b>path_to_AutoHotkey.exe</b>\" \"<b>path_to_script.ahk</b>\"" /sc onlogon /delay 0000:01 /rl highest
-  </div>
+  <p class=margin-b><b>Requirements</b>
+  <ul id=icon style="padding-inline-start: 0">
+    <li><img src=images/admin.png><span>Run as administrator</span>
+    <li><img src=images/taskschd.png><span id=expand style="color: #004c99; cursor: pointer">Add to startup using Task Scheduler</span>
+      <div id=content style="height: 0; overflow: hidden; transition-property: height; transition-timing: ease-out">
+        <ol>
+          <li>Create Task
+          <li>General
+            <ul>
+              <li>Name: <i>"script.ahk"</i>
+              <li>Run with highest privileges
+            </ul>
+          <li>Triggers
+            <ul>
+              <li>Begin the task: At log on
+              <li>Delay task for: 1 second (for system tray icon to show)
+            </ul>
+          <li>Actions
+            <ul>
+              <li>Program/script: <i>"path_to_AutoHotkey.exe"</i>
+              <li>Add arguments (optional): <i>"path_to_script.ahk"</i>
+            </ul>
+        </ol>
+        <p style="margin-left: 22">Or run the following command as administrator:
+        <p class=i style="background: #f5f4ef; border: 2px dashed #c9baa7; color: #31808c; padding: 20">schtasks /create /tn "<b>script.ahk</b>" /tr "\"<b>path_to_AutoHotkey.exe</b>\" \"<b>path_to_script.ahk</b>\"" /sc onlogon /delay 0000:01 /rl highest
+      </div>
+  </ul>
+  <p class=center style="margin-top: 20"><a href=https://github.com/jairocontreras/autohotkey id=github style="background: #f6f8fa; border: 1px solid rgba(27, 31, 36, 0.15); border-radius: 6px; box-shadow: 0 1px 0 rgba(27, 31, 36, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.25); color: #24292f; display: inline-block; font-size: 14; font-weight: 500; padding: 5 10">View on GitHub</a>
 </main>
 <script src=script/ahk.js></script>
