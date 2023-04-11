@@ -81,14 +81,11 @@ ul {
 #extend span {
   font-size: 14;
 }
-#github::before {
-  content: url(/images/github.png);
-  margin-right: 8;
-  vertical-align: -2;
-}
-#github:hover {
-  background: #f3f4f6 !important;
-}
 #icon > li {
+  align-items: center;
+  display: flex;
   margin-bottom: 10;
+}
+#icon > li:last-of-type {
+  margin-bottom: 0;
 }

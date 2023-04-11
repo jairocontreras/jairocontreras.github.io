@@ -1,6 +1,9 @@
 a {
   text-decoration: none;
 }
+a:not(#github):hover {
+  text-decoration: underline;
+}
 a[href="/"] {
   background: url(/images/return.png);
   height: 20;
@@ -9,6 +12,10 @@ a[href="/"] {
 }
 a[href="/"] + p, .center {
   text-align: center;
+}
+a[target=_blank]::after {
+  content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==);
+  margin-left: 5;
 }
 body, button, input, select {
   font-family: segoe ui;
@@ -41,11 +48,11 @@ main {
   padding: 30 50;
   width: 550;
 }
-p:first-of-type {
-  margin-block-start: 0;
-}
-p:last-of-type:not(:first-of-type), .margin-b {
+main > :is(ol, p):last-of-type:not(:first-of-type), .margin-b {
   margin-block-end: 0;
+}
+main > p:first-of-type {
+  margin-block-start: 0;
 }
 .break {
   flex-basis: 100%;
