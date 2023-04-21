@@ -16,7 +16,7 @@ li {
 ol, ul {
   margin-top: 10;
 }
-ol:not(div ol), ul {
+ol:not(div ol), ol ul {
   padding-inline-start: 20px;
 }
 ol ul {
@@ -25,6 +25,7 @@ ol ul {
 }
 ul {
   list-style: none;
+  padding-inline-start: 0;
 }
 .break, .position p {
   margin-bottom: 12;
