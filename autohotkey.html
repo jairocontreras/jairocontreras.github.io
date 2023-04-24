@@ -1,13 +1,15 @@
-<link rel=icon href=images/fav_ahk.png>
-<link rel=stylesheet href=style/site.css>
-<link rel=stylesheet href=style/ahk.css>
+<!doctype html>
 <title>AutoHotkey Scripts</title>
+<link href=images/fav_ahk.png rel=icon>
+<link href=style/site.css rel=stylesheet>
+<link href=style/ahk.css rel=stylesheet>
+<script src=script/ahk.js></script>
 <main>
   <a href=/></a>
   <p><img src=images/ahk.png><span>AutoHotkey Scripts</span>
   <hr>
   <p><img src=images/icon_resource_viewer.png><span>Icon Resource Viewer</span>
-  <p class=center><img src=images/screenshot.png>
+  <p class=p style="text-align: center"><img src=images/screenshot.png>
   <ul>
     <li>Supported file types: ani, cpl, cur, dll, exe, ico, scr
     <li>Zero-based index or resource id
@@ -16,25 +18,25 @@
   <p><img src=images/media.png><span>Media Controls</span>
   <div class="flex hotkeys">
     <div></div>
-    <div class=flex style="align-items: center; position: relative; width: 110">
+    <div class=flex id=media>
       <code>Enter</code>
       <div class=break></div>
       <code>Ctrl</code>
-      <div style="background: url(images/plus_small.png); height: 13; margin-left: 8; margin-right: 8; width: 13"></div>
-      <code class=margin-r>&#8592;</code>
+      <div id=plus></div>
+      <code style="margin-right: 2px">&#8592;</code>
       <code>&#8594;</code>
-      <div class=position style="left: 130; top: -2">
+      <div class=position id=media_actions>
         <p>Play/pause
         <p>Previous/next
       </div>
     </div>
   </div>
-  <hr>
+  <hr style="margin-top: 20px">
   <p><img src=images/system_tray_cleaner.png><span>System Tray Cleaner</span>
-  <p class=i>Automatically remove specified icons
-  <p class=margin-b>How to use
+  <p style="font-style: italic">Automatically remove specified icons
+  <p>How to use
   <ol>
-    <li>Create <i>"apps.txt"</i>
+    <li>Create <i>apps.txt</i>
     <li>Enter <i>executable</i> (e.g. spotify)
     <li>Add one per line
     <li>Run script before opening app
@@ -43,10 +45,10 @@
   <p><img src=images/window_manager.png><span>Window Manager</span>
   <div class="flex hotkeys">
     <div></div>
-    <div class=flex style="padding-top: 24; position: relative; width: 80">
-      <code class=margin-r>&#8592;</code>
-      <code class=margin-r>&#8595;</code>
-      <code style="position: absolute; top: 0">&#8593;</code>
+    <div class=flex id=window>
+      <code style="margin-right: 2px">&#8592;</code>
+      <code style="margin-right: 2px">&#8595;</code>
+      <code id=up>&#8593;</code>
       <code>&#8594;</code>
       <div class=break></div>
       <code>C</code>
@@ -58,8 +60,8 @@
       <code>Page Up</code>
       <div class=break></div>
       <code>Z</code>
-      <div class=position style="left: 110; top: 25; width: 190">
-        <p>Snap<span id=extend><span class=i> (Hold </span><code>Shift</code><span class=i> to extend</span>)</span>
+      <div class=position id=window_actions>
+        <p>Snap<span class=font> (Hold </span><code>Shift</code><span class=font> to extend)</span>
         <p>Center
         <p>Maximize
         <p>Minimize
@@ -68,18 +70,18 @@
       </div>
     </div>
   </div>
-  <p class=margin-b>Workspace
+  <p>Workspace
   <ul id=dash style="padding-inline-start: 10px">
     <li>Restrict windows to the screen when moving
     <li>Stretch to fill to the edges of the screen when resizing
   </ul>
-  <p class=margin-b>Notes
-  <ul class=margin-b id=icon>
+  <p>Notes
+  <ul id=icon style="margin-block-end: 0">
     <li><img src=images/admin.png><span>Run as administrator</span>
-    <li><img src=images/taskschd.png><span id=expand style="color: #004c99; cursor: pointer">Add to startup using Task Scheduler</span>
+    <li><img src=images/taskschd.png><span id=startup>Add to startup using Task Scheduler</span>
   </ul>
-  <div id=content style="height: 0; overflow: hidden; transition-property: height; transition-timing: ease-out">
-    <ol>
+  <div id=hidden>
+    <ol style="margin-top: 10px">
       <li>Create Task
       <li>General
         <ul>
@@ -89,7 +91,7 @@
       <li>Triggers
         <ul>
           <li>Begin the task: At log on
-          <li>Delay task for: 1 second (for system tray icon to show)
+          <li>Delay task for: 1 second <i>(for system tray icon to show)</i>
         </ul>
       <li>Actions
         <ul>
@@ -97,14 +99,13 @@
           <li>Add arguments: <i>path_to_script.ahk</i>
         </ul>
     </ol>
-    <p style="margin-left: 22">Or run the following command as administrator:
-    <p class="i margin-b" style="background: #f5f4ef; border: 2px dashed #c9baa7; color: #31808c; padding: 20">schtasks /create /tn "<b>script.ahk</b>" /tr "\"<b>path_to_AutoHotkey.exe</b>\" \"<b>path_to_script.ahk</b>\"" /sc onlogon /delay 0000:01 /rl highest
+    <p style="margin-left: 22px">Or run the following command as administrator:
+    <p id=command style="margin-bottom: 5px">schtasks /create /tn "<b>script.ahk</b>" /tr "\"<b>path_to_AutoHotkey.exe</b>\" \"<b>path_to_script.ahk</b>\"" /sc onlogon /delay 0000:01 /rl highest
   </div>
   <hr>
   <p>How to install
   <ol>
     <li>Get <a href=https://www.autohotkey.com target=_blank>AutoHotkey</a>
-    <li>Download <a class=i href=https://github.com/jairocontreras/autohotkey/tree/master/scripts>scripts</a> using <a href=https://minhaskamal.github.io/DownGit target=_blank>DownGit</a>
+    <li>Download <a href=https://github.com/jairocontreras/autohotkey/tree/master/scripts style="font-style: italic">scripts</a> using <a href=https://minhaskamal.github.io/DownGit target=_blank>DownGit</a>
   </ol>
 </main>
-<script src=script/ahk.js></script>

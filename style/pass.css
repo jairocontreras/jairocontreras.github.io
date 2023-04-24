@@ -1,36 +1,73 @@
 body {
-  background-image: url(/images/security.webp);
+  background-image: url(/images/bg_pass.jpg);
+  background-repeat: repeat-x;
+  background-size: initial;
 }
 button, input, select {
-  font-size: 16; /* same as body */
-  padding-bottom: 10;
-  padding-top: 10;
-}
-input, select, .actions {
-  border-color: #bcbcbc;
-}
-input, .actions {
-  border-style: solid;
-  border-radius: 5px;
-  border-width: 1;
+  /* same as body */
+  font-family: segoe ui;
+  font-size: 16px;
+  /* other */
+  padding-bottom: 10px;
+  padding-top: 10px;
 }
 button {
   cursor: pointer;
+}
+input, select, .actions {
+  border-color: #bcbcbc;
+  border-radius: 5px;
+}
+input, .actions {
+  border-style: solid;
+  border-width: 1px;
 }
 input:focus, select:focus {
   outline: none;
 }
 .actions {
-  font-size: 15;
-  padding-left: 15;
-  padding-right: 15;
+  font-size: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 .actions:hover {
   background: #f7f7f7;
 }
 .break {
-  margin-top: 20;
+  margin-top: 20px;
+}
+.copied {
+  background: #d3d3d3 !important;
 }
 #generate:hover {
-  background: #4095c6 !important;
+  background: #4095c6;
+}
+
+/* inline */
+
+hr {
+  margin-bottom: 25px;
+  margin-top: 10px;
+}
+input {
+  text-align: center;
+  width: 240px;
+}
+#copy {
+  margin-right: 8px;
+  transition-duration: 0.3s;
+}
+#generate {
+  background: #4eb5f1;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  transition-duration: 0.2s;
+}
+#number {
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-right: 15px;
 }

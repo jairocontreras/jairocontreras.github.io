@@ -1,5 +1,7 @@
-const content = document.getElementById("content");
-document.getElementById("expand").addEventListener("click", function() {
-  this.classList.toggle("collapse");
-  content.style.height = (content.offsetHeight == 0 ? content.scrollHeight : 0);
+window.addEventListener("load", function() {
+  const hidden = document.getElementById("hidden");
+  document.getElementById("startup").addEventListener("click", function() {
+    this.classList.toggle("collapse");
+    hidden.style.height = (hidden.offsetHeight == 0 ? hidden.scrollHeight + "px" : 0);
+  });
 });
