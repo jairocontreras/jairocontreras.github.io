@@ -1,6 +1,5 @@
 body {
-  background-image: url(/images/bg_pass.jpg);
-  background-repeat: repeat-x;
+  background: url(/images/bg_pass.jpg) repeat-x;
   background-size: initial;
 }
 button, input, select {
