@@ -2,7 +2,7 @@ window.addEventListener("load", function() {
   const alphabet = "abcdefghijklmnopqrstuvwxyz",
         number = document.getElementById("number"),
         generate = document.getElementById("generate"),
-        result = document.getElementById("result"),
+        password = document.getElementById("password"),
         copy = document.getElementById("copy"),
         clear = document.getElementById("clear");
   var options = "";
@@ -37,17 +37,17 @@ window.addEventListener("load", function() {
           tmp = buffer.indexOf(new_tmp);
       if (tmp == -1) {
         const insert_pos = Math.floor(Math.random() * buffer_len);
-        var _result = buffer.substring(0, insert_pos) + new_tmp + buffer.substring(insert_pos, buffer_len);
+        var result = buffer.substring(0, insert_pos) + new_tmp + buffer.substring(insert_pos, buffer_len);
         break
       }
       else
         charset = charset.replace(new_tmp, "");
     }
-    result.value = _result;
+    password.value = result;
   });
 
   copy.addEventListener("click", function() {
-    navigator.clipboard.writeText(result.value);
+    navigator.clipboard.writeText(password.value);
     this.innerText = "Copied!";
     this.classList.add("copied");
   });
@@ -58,6 +58,6 @@ window.addEventListener("load", function() {
   });
 
   clear.addEventListener("click", function() {
-    result.value = "";
+    password.value = "";
   });
 });
