@@ -1,4 +1,4 @@
-window.addEventListener("load", function() {
+window.addEventListener("load", () => {
   const alphabet = "abcdefghijklmnopqrstuvwxyz",
         number = document.getElementById("number"),
         generate = document.getElementById("generate"),
@@ -12,7 +12,7 @@ window.addEventListener("load", function() {
   }
   number.innerHTML += options;
 
-  generate.addEventListener("click", function() {
+  generate.addEventListener("click", () => {
     const length = number.value,
           buffer_len = length-1;
     var buffer = "",
@@ -46,18 +46,18 @@ window.addEventListener("load", function() {
     password.value = result;
   });
 
-  copy.addEventListener("click", function() {
+  copy.addEventListener("click", () => {
     navigator.clipboard.writeText(password.value);
     this.innerText = "Copied!";
     this.classList.add("copied");
   });
 
-  copy.addEventListener("blur", function() {
+  copy.addEventListener("blur", () => {
     this.innerText = "Copy";
     this.classList.remove("copied");
   });
 
-  clear.addEventListener("click", function() {
+  clear.addEventListener("click", () => {
     password.value = "";
   });
 });

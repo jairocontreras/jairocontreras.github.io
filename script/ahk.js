@@ -1,6 +1,6 @@
-window.addEventListener("load", function() {
+window.addEventListener("load", () => {
   const hidden = document.getElementById("hidden");
-  document.getElementById("startup").addEventListener("click", function() {
+  document.getElementById("startup").addEventListener("click", () => {
     this.classList.toggle("collapse");
     hidden.style.height = (hidden.offsetHeight == 0 ? hidden.scrollHeight + "px" : 0);
   });
