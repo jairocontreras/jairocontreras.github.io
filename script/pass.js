@@ -1,4 +1,4 @@
-window.addEventListener("load", () => {
+document.addEventListener("DOMContentLoaded", () => {
   const alphabet = "abcdefghijklmnopqrstuvwxyz",
         number = document.getElementById("number"),
         generate = document.getElementById("generate"),
