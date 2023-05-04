@@ -1,7 +1,3 @@
-body {
-  background: url(/images/bg_pass.jpg) repeat-x;
-  background-size: initial;
-}
 button, input, select {
   /* same as body */
   font-family: segoe ui;

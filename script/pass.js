@@ -46,13 +46,13 @@ window.addEventListener("load", () => {
     password.value = result;
   });
 
-  copy.addEventListener("click", () => {
+  copy.addEventListener("click", function() {
     navigator.clipboard.writeText(password.value);
     this.innerText = "Copied!";
     this.classList.add("copied");
   });
 
-  copy.addEventListener("blur", () => {
+  copy.addEventListener("blur", function() {
     this.innerText = "Copy";
     this.classList.remove("copied");
   });

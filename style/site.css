@@ -16,7 +16,7 @@ a[target=_blank]::after {
   margin-left: 5px;
 }
 body {
-  background: url(/images/background.png);
+  background: url(/images/background.svg);
   background-size: cover;
   font-family: segoe ui;
   margin-bottom: 25px;
