@@ -67,6 +67,9 @@ ul {
 #hidden, #startup::after {
   transition-duration: 0.5s;
 }
+#hidden span, #snap {
+  background: #ffffe0;
+}
 #icon > li {
   align-items: center;
   display: flex;

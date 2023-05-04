@@ -33,7 +33,7 @@
   </div>
   <hr style="margin-top: 20px">
   <p><img src=images/system_tray_cleaner.png><span>System Tray Cleaner</span>
-  <p style="font-style: italic">Automatically remove specified icons
+  <p style="font-style: italic">Automatically remove app icons
   <p>How to use
   <ol>
     <li>Create <i>apps.txt</i>
@@ -43,6 +43,7 @@
   </ol>
   <hr>
   <p><img src=images/window_manager.png><span>Window Manager</span>
+  <p style="font-style: italic">Permanent resize
   <div class="flex hotkeys">
     <div></div>
     <div class=flex id=window>
@@ -72,12 +73,13 @@
   </div>
   <p>Workspace
   <ul id=dash style="padding-inline-start: 10px">
-    <li>Restrict windows to the screen when moving
+    <li>Restrict to the screen when moving
     <li>Stretch to fill to the edges of the screen when resizing
+    <li><i>(Recommended)</i> Turn off <i id=snap>Snap windows</i> setting in <i>System > Multitasking</i>
   </ul>
   <p>Notes
   <ul id=icon style="margin-block-end: 0">
-    <li><img src=images/admin.png><span>Run as administrator</span>
+    <li><img src=images/admin.png><span>Run as administrator to control elevated windows</span>
     <li><img src=images/taskschd.png><span id=startup>Add to startup using Task Scheduler</span>
   </ul>
   <div id=hidden>
@@ -85,22 +87,22 @@
       <li>Create Task
       <li>General
         <ul>
-          <li>Name: <i>script.ahk</i>
-          <li>Run with highest privileges
+          <li>Name: <span><i>script.ahk</i></span>
+          <li><span>Run with highest privileges</span>
         </ul>
       <li>Triggers
         <ul>
-          <li>Begin the task: At log on
-          <li>Delay task for: 1 second <i>(for system tray icon to show)</i>
+          <li>Begin the task: <span>At log on</span>
+          <li>Delay task for: <span>1 second</span> <i>(for system tray icon to show)</i>
         </ul>
       <li>Actions
         <ul>
-          <li>Program/script: <i>path_to_AutoHotkey.exe</i>
-          <li>Add arguments: <i>path_to_script.ahk</i>
+          <li>Program/script: <span><i>path_to_AutoHotkeyUX.exe</i></span>
+          <li>Add arguments: <span><i>path_to_script.ahk</i></span>
         </ul>
     </ol>
     <p style="margin-left: 22px">Or run the following command as administrator:
-    <p id=command>schtasks /create /tn "<b>script.ahk</b>" /tr "\"<b>path_to_AutoHotkey.exe</b>\" \"<b>path_to_script.ahk</b>\"" /sc onlogon /delay 0000:01 /rl highest
+    <p id=command>schtasks /create /tn "<b>script.ahk</b>" /tr "\"<b>path_to_AutoHotkeyUX.exe</b>\" \"<b>path_to_script.ahk</b>\"" /sc onlogon /delay 0000:01 /rl highest
   </div>
   <hr>
   <p>How to install
