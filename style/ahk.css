@@ -30,7 +30,7 @@ ul {
   list-style: none;
   padding-inline-start: 0;
 }
-.break, .position p {
+.break, #actions p {
   margin-bottom: 12px;
 }
 .collapse::after {
@@ -40,20 +40,7 @@ ul {
   font-size: 14px;
   font-style: italic;
 }
-.hotkeys {
-  align-items: center;
-}
-.hotkeys::before {
-  content: url(/images/winlogo.png);
-}
-.hotkeys > div:first-child {
-  background: url(/images/plus_large.png);
-  height: 15px;
-  margin-left: 15px;
-  margin-right: 15px;
-  width: 15px;
-}
-.position p {
+#actions p {
   margin-block-start: 0;
 }
 #dash li::before {
@@ -66,6 +53,9 @@ ul {
 }
 #hidden span, #snap {
   background: #ffffe0;
+}
+#hotkeys::before {
+  content: url(/images/winlogo.png);
 }
 #icon > li {
   align-items: center;
@@ -89,6 +79,12 @@ ul {
 
 /* inline */
 
+#actions {
+  left: 110px;
+  position: absolute;
+  top: 25px;
+  width: 190px;
+}
 #command {
   background: #f5f4ef;
   border: 2px dashed #c9baa7;
@@ -103,22 +99,15 @@ ul {
   transition-property: height;
   transition-timing-function: ease-out;
 }
-#media {
+#hotkeys {
   align-items: center;
-  position: relative;
-  width: 110px;
-}
-#media_actions {
-  left: 130px;
-  position: absolute;
-  top: -2px;
 }
 #plus {
-  background: url(/images/plus_small.png);
-  height: 13px;
-  margin-left: 8px;
-  margin-right: 8px;
-  width: 13px;
+  background: url(/images/plus.png);
+  height: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
+  width: 15px;
 }
 #startup {
   color: #004c99;
@@ -132,10 +121,4 @@ ul {
   padding-top: 24px;
   position: relative;
   width: 80px;
-}
-#window_actions {
-  left: 110px;
-  position: absolute;
-  top: 25px;
-  width: 190px;
 }
