@@ -40,6 +40,9 @@ ul {
   font-size: 14px;
   font-style: italic;
 }
+.high, #hidden span {
+  background: #ffffe0;
+}
 #actions p {
   margin-block-start: 0;
 }
@@ -48,11 +51,16 @@ ul {
   margin-left: -10px;
   position: absolute;
 }
+#download:hover {
+  background: #46a049;
+}
+#download::before {
+  content: url(/images/download.png);
+  margin-right: 10px;
+  vertical-align: top;
+}
 #hidden, #startup::after {
   transition-duration: 0.5s;
-}
-#hidden span, #snap {
-  background: #ffffe0;
 }
 #hotkeys::before {
   content: url(/images/winlogo.png);
@@ -85,13 +93,25 @@ ul {
   top: 25px;
   width: 190px;
 }
+#ahk {
+  bottom: -5px;
+  position: absolute;
+  right: 0;
+}
 #command {
   background: #f5f4ef;
   border: 2px dashed #c9baa7;
   color: #31808c;
   font-style: italic;
-  margin-bottom: 5px;
+  margin-block-end: 0;
   padding: 20px;
+}
+#download {
+  background: #4caf50;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  color: white;
+  display: inline-block;
+  padding: 12px 20px;
 }
 #hidden {
   height: 0;
@@ -101,6 +121,11 @@ ul {
 }
 #hotkeys {
   align-items: center;
+}
+#p {
+  margin-top: 20px;
+  position: relative;
+  text-align: center;
 }
 #plus {
   background: url(/images/plus.png);
