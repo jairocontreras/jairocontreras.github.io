@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
         password = document.getElementById("password"),
         copy = document.getElementById("copy"),
         clear = document.getElementById("clear");
-  var options = "";
+  let options = "";
 
   for (let i = 1; i < 27; i++) {
     options += "<option>" + i;
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   generate.addEventListener("click", () => {
     const length = number.value,
           buffer_len = length-1;
-    var buffer = "",
+    let buffer = "",
         charset = alphabet;
     for (let i = 0; i < buffer_len; i++) {
       while (true) {
