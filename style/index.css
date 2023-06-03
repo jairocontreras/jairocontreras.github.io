@@ -2,12 +2,10 @@ div {
   margin-left: 20px;
 }
 #github:hover {
-  background: #f3f4f6;
+  background-color: #f3f4f6;
 }
-#github::before {
-  content: url(/images/github.png);
-  margin-right: 8px;
-  vertical-align: -2px;
+#github:active {
+  background-color: #ebecf0;
 }
 
 /* inline */
@@ -17,16 +15,19 @@ div {
   text-align: center;
 }
 #github {
-  background: #f6f8fa;
+  background: url(/images/github.png) 10px 7px no-repeat #f6f8fa;
   border: 1px solid rgba(27, 31, 36, 0.15);
   border-radius: 6px;
   box-shadow: 0 1px 0 rgba(27, 31, 36, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.25);
   color: #24292f;
-  display: inline-block;
   font-size: 14px;
   font-weight: 500;
-  padding: 5px 10px;
+  height: 20px;
+  padding-bottom: 5px;
+  padding-left: 32px;
+  padding-right: 10px;
+  padding-top: 5px;
   position: absolute;
   right: 0;
-  top: -4px;
+  top: -6px;
 }
