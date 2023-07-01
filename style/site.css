@@ -3,7 +3,7 @@ a {
   text-underline-offset: 4px;
 }
 a[href="/"] {
-  background: url(/images/return.png);
+  background: url(/image/return.png);
   height: 20px;
   position: absolute;
   width: 20px;
@@ -16,7 +16,7 @@ a[target=_blank]::after {
   margin-left: 5px;
 }
 body {
-  background: url(/images/background.svg) fixed;
+  background: url(/image/bg.svg) fixed;
   background-size: cover;
   font-family: segoe ui;
   margin-bottom: 25px;

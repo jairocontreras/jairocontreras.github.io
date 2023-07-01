@@ -55,7 +55,7 @@ ul {
   background: #46a049;
 }
 #download::before {
-  content: url(/images/download.png);
+  content: url(/image/download.png);
   margin-right: 10px;
   vertical-align: top;
 }
@@ -63,7 +63,7 @@ ul {
   transition-duration: 0.5s;
 }
 #hotkeys::before {
-  content: url(/images/winlogo.png);
+  content: url(/image/winlogo.png);
 }
 #icon > li {
   align-items: center;
@@ -128,7 +128,7 @@ ul {
   text-align: center;
 }
 #plus {
-  background: url(/images/plus.png);
+  background: url(/image/plus.png);
   height: 15px;
   margin-left: 15px;
   margin-right: 15px;
