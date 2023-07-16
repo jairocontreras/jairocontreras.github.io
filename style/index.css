@@ -10,8 +10,8 @@ div {
 
 /* inline */
 
-#bottom {
-  position: relative;
+#donate {
+  margin-top: 25px;
   text-align: center;
 }
 #github {
@@ -28,6 +28,5 @@ div {
   padding-right: 10px;
   padding-top: 5px;
   position: absolute;
-  right: 0;
-  top: -6px;
+  right: 50px;
 }

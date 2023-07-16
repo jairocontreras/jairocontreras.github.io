@@ -66,3 +66,52 @@ p:has(img + :is(a, span)) {
   flex-wrap: wrap; /* used for line breaks */
   justify-content: center;
 }
+
+/* MOBILE */
+
+@media only screen and (max-device-width: 824px) {
+  body {
+    background: initial;
+    margin-bottom: initial;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: initial;
+  }
+  main {
+    border: initial;
+    border-radius: initial;
+    box-shadow: initial;
+    padding: 25px;
+  }
+  #github {
+    right: 25px !important;
+  }
+  #hotkeys {
+    position: relative;
+  }
+  @media (orientation: portrait) {
+    main {
+      width: 350px;
+    }
+    #_pass {
+      margin-top: -6px !important;
+    }
+    #_pass img {
+      height: 30px;
+    }
+    #_pass span {
+      font-size: initial !important;
+    }
+    #window {
+      width: 82px !important;
+    }
+  }
+  @media (orientation: landscape) {
+    main {
+      width: 500px;
+    }
+    #_pass {
+      margin-top: initial !important;
+    }
+  }
+}

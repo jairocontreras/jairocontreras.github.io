@@ -30,20 +30,17 @@ ul {
   list-style: none;
   padding-inline-start: 0;
 }
-.break, #actions p {
+.break {
   margin-bottom: 12px;
 }
 .collapse::after {
   transform: rotate(180deg);
 }
-.font {
-  font-size: 14px;
-  font-style: italic;
-}
 .high, #hidden span {
   background: #ffffe0;
 }
 #actions p {
+  margin-block-end: 0;
   margin-block-start: 0;
 }
 #dash li::before {
@@ -58,6 +55,10 @@ ul {
   content: url(/image/download.png);
   margin-right: 10px;
   vertical-align: top;
+}
+#extend span {
+  font-size: 14px;
+  font-style: italic;
 }
 #hidden, #startup::after {
   transition-duration: 0.5s;
@@ -88,10 +89,8 @@ ul {
 /* inline */
 
 #actions {
-  left: 110px;
-  position: absolute;
-  top: 25px;
-  width: 190px;
+  justify-content: initial;
+  width: 100px;
 }
 #ahk {
   bottom: -5px;
@@ -113,14 +112,15 @@ ul {
   display: inline-block;
   padding: 12px 20px;
 }
+#extend {
+  margin-left: 4px;
+  position: absolute;
+}
 #hidden {
   height: 0;
   overflow: hidden;
   transition-property: height;
   transition-timing-function: ease-out;
-}
-#hotkeys {
-  align-items: center;
 }
 #p {
   margin-top: 20px;
@@ -138,12 +138,8 @@ ul {
   color: #004c99;
   cursor: pointer;
 }
-#up {
-  position: absolute;
-  top: 0;
-}
 #window {
-  padding-top: 24px;
+  margin-right: 25px;
   position: relative;
   width: 80px;
 }
