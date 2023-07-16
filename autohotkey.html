@@ -7,7 +7,7 @@
 <script src=script/ahk.js></script>
 <main>
   <a href=/></a>
-  <p><img src=image/ahk.png><span>AutoHotkey Scripts</span>
+  <p id=_ahk><img src=image/ahk.png><span>AutoHotkey Scripts</span>
   <hr>
   <p><img src=image/icon_resource_viewer.png><span>Icon Resource Viewer</span>
   <p class=p style="text-align: center"><img src=image/screenshot.png>
@@ -30,7 +30,7 @@
   <p style="font-style: italic">Permanent resize
   <div class=flex id=hotkeys style="align-items: center">
     <div id=plus></div>
-    <div class=flex id=window>
+    <div class=flex id=key>
       <code>&#8593;</code>
       <div class=break style="margin-bottom: 3px"></div>
       <code style="margin-right: 2px">&#8592;</code>
@@ -47,8 +47,8 @@
       <div class=break></div>
       <code>Z</code>
     </div>
-    <div class=flex id=actions>
-      <p style="margin-top: 25px">Snap<span id=extend><span> (Hold </span><code>Shift</code><span> to extend)</span></span>
+    <div class=flex id=action>
+      <p id=_snap style="margin-top: 25px">Snap<span id=extend><span> (Hold </span><code>Shift</code><span> to extend)</span></span>
       <div class=break></div>
       <p>Center
       <div class=break></div>
@@ -65,7 +65,7 @@
   <ul id=dash style="padding-inline-start: 10px">
     <li>Restrict to the screen when moving
     <li>Stretch to fill to the edges of the screen when resizing
-    <li><i>(Recommended)</i> Turn off <i class=high>Snap windows</i> setting in <i class=high>System > Multitasking</i>
+    <li><i style="color: green">(Recommended)</i> Turn off <i class=high>Snap windows</i> setting in <i class=high>System > Multitasking</i>
   </ul>
   <p>Notes
   <ul id=icon style="margin-block-end: 0">
@@ -94,6 +94,6 @@
     <p style="margin-left: 22px">Or run the following command as administrator:
     <p id=command>schtasks /create /tn "<b>script.ahk</b>" /tr "\"<b>path_to_AutoHotkeyUX.exe</b>\" \"<b>path_to_script.ahk</b>\"" /sc onlogon /delay 0000:01 /rl highest
   </div>
-  <p id=p><a class=button href=https://github.com/jairocontreras/autohotkey id=download>Download</a>
+  <p id=bottom><a class=button href=https://github.com/jairocontreras/autohotkey id=download>Download</a>
   <a href=https://www.autohotkey.com id=ahk><img src=image/ahk_site.png></a>
 </main>

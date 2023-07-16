@@ -4,9 +4,6 @@ code {
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
   padding: 2px 5px;
 }
-hr {
-  margin-bottom: 10px;
-}
 li:not(:last-of-type) {
   margin-bottom: 5px;
 }
@@ -39,7 +36,7 @@ ul {
 .high, #hidden span {
   background: #ffffe0;
 }
-#actions p {
+#action p {
   margin-block-end: 0;
   margin-block-start: 0;
 }
@@ -88,7 +85,7 @@ ul {
 
 /* inline */
 
-#actions {
+#action {
   justify-content: initial;
   width: 100px;
 }
@@ -96,6 +93,11 @@ ul {
   bottom: -5px;
   position: absolute;
   right: 0;
+}
+#bottom {
+  margin-top: 20px;
+  position: relative;
+  text-align: center;
 }
 #command {
   background: #f5f4ef;
@@ -122,10 +124,10 @@ ul {
   transition-property: height;
   transition-timing-function: ease-out;
 }
-#p {
-  margin-top: 20px;
+#key {
+  margin-right: 25px;
   position: relative;
-  text-align: center;
+  width: 80px;
 }
 #plus {
   background: url(/image/plus.png);
@@ -137,9 +139,4 @@ ul {
 #startup {
   color: #004c99;
   cursor: pointer;
-}
-#window {
-  margin-right: 25px;
-  position: relative;
-  width: 80px;
 }

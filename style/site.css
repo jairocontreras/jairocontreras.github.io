@@ -26,6 +26,7 @@ hr {
   background: linear-gradient(to right, #ccc, #333, #ccc);
   border: none;
   height: 1px;
+  margin-bottom: 10px;
   margin-top: 15px;
 }
 hr + p {
@@ -83,35 +84,32 @@ p:has(img + :is(a, span)) {
     box-shadow: initial;
     padding: 25px;
   }
+  #action .break {
+    margin-bottom: 14px !important;
+  }
   #github {
     right: 25px !important;
   }
-  #hotkeys {
-    position: relative;
+  #key {
+    width: 84px !important;
+  }
+  #_ahk {
+    margin-top: -1px !important;
+  }
+  #_pass {
+    margin-top: -6px !important;
+  }
+  #_snap {
+    margin-top: 28px !important;
   }
   @media (orientation: portrait) {
     main {
       width: 350px;
     }
-    #_pass {
-      margin-top: -6px !important;
-    }
-    #_pass img {
-      height: 30px;
-    }
-    #_pass span {
-      font-size: initial !important;
-    }
-    #window {
-      width: 82px !important;
-    }
   }
   @media (orientation: landscape) {
     main {
       width: 500px;
-    }
-    #_pass {
-      margin-top: initial !important;
     }
   }
 }
