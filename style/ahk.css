@@ -9,23 +9,22 @@ li:not(:last-of-type) {
 }
 ol, ul {
   margin-block-start: 0;
-}
-ol:not(div ol), ol ul {
   padding-inline-start: 20px;
 }
 :is(ol, ul):has(+ hr) {
   margin-block-end: 0;
 }
-ol ul {
-  list-style: lower-alpha;
-  margin-top: 5px;
-}
-p:not(.p):has(+ :is(ol, ul)) {
+p:not(#p):has(+ :is(ol, ul)) {
   margin-bottom: 10px;
 }
-ul {
-  list-style: none;
-  padding-inline-start: 0;
+.action {
+  justify-content: initial;
+  margin-left: 20px;
+  width: 100px;
+}
+.action p {
+  margin-block-end: 0;
+  margin-block-start: 0;
 }
 .break {
   margin-bottom: 12px;
@@ -33,23 +32,18 @@ ul {
 .collapse::after {
   transform: rotate(180deg);
 }
-.high, #hidden span {
-  background: #ffffe0;
-}
-#action p {
-  margin-block-end: 0;
-  margin-block-start: 0;
-}
-#dash li::before {
-  content: "-";
-  margin-left: -10px;
-  position: absolute;
+.plus {
+  background: url(/images/plus.png);
+  height: 15px;
+  margin-left: 20px;
+  margin-right: 20px;
+  width: 15px;
 }
 #download:hover {
   background: #46a049;
 }
 #download::before {
-  content: url(/image/download.png);
+  content: url(/images/download.png);
   margin-right: 10px;
   vertical-align: top;
 }
@@ -57,38 +51,12 @@ ul {
   font-size: 14px;
   font-style: italic;
 }
-#hidden, #startup::after {
-  transition-duration: 0.5s;
-}
-#hotkeys::before {
-  content: url(/image/winlogo.png);
-}
-#icon > li {
-  align-items: center;
-  display: flex;
-  margin-bottom: 8px;
-}
-#icon > li:last-child {
-  margin-bottom: 0;
-}
-#startup:hover {
-  color: #0082e0;
-}
-#startup::after {
-  color: #5a5a5a;
-  content: "\25bc";
-  display: inline-block;
-  font-size: 12px;
-  margin-left: 5px;
-  transition-property: transform;
+#winkey::before {
+  content: url(/images/winlogo.png);
 }
 
 /* inline */
 
-#action {
-  justify-content: initial;
-  width: 100px;
-}
 #ahk {
   bottom: -5px;
   position: absolute;
@@ -98,14 +66,6 @@ ul {
   margin-top: 20px;
   position: relative;
   text-align: center;
-}
-#command {
-  background: #f5f4ef;
-  border: 2px dashed #c9baa7;
-  color: #31808c;
-  font-style: italic;
-  margin-block-end: 0;
-  padding: 20px;
 }
 #download {
   background: #4caf50;
@@ -117,26 +77,4 @@ ul {
 #extend {
   margin-left: 4px;
   position: absolute;
-}
-#hidden {
-  height: 0;
-  overflow: hidden;
-  transition-property: height;
-  transition-timing-function: ease-out;
-}
-#key {
-  margin-right: 25px;
-  position: relative;
-  width: 80px;
-}
-#plus {
-  background: url(/image/plus.png);
-  height: 15px;
-  margin-left: 15px;
-  margin-right: 15px;
-  width: 15px;
-}
-#startup {
-  color: #004c99;
-  cursor: pointer;
 }

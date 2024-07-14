@@ -1,0 +1,11 @@
+Windows Registry Editor Version 5.00
+
+; restart computer
+
+; when i drag a window, let me snap or maximize it by dragging to the screen edge: off
+[HKEY_CURRENT_USER\Control Panel\Desktop]
+"DockMoving"="0"
+
+; when i resize a window, snap vertically: off
+[HKEY_CURRENT_USER\Control Panel\Desktop]
+"SnapSizing"="0"

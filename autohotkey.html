@@ -1,43 +1,65 @@
 <!doctype html>
 <meta content="width=device-width" name=viewport>
 <title>AutoHotkey Scripts</title>
-<link href=image/fav_ahk.png rel=icon>
+<link href=images/fav_ahk.png rel=icon>
 <link href=style/site.css rel=stylesheet>
 <link href=style/ahk.css rel=stylesheet>
-<script src=script/ahk.js></script>
 <main>
   <a href=/></a>
-  <p id=_ahk><img src=image/ahk.png><span>AutoHotkey Scripts</span>
+  <p id=_ahk><img src=images/ahk.png><span>AutoHotkey Scripts</span>
   <hr>
-  <p><img src=image/icon_resource_viewer.png><span>Icon Resource Viewer</span>
-  <p class=p style="text-align: center"><img src=image/screenshot.png>
+  <p><img src=images/icon_resource_viewer.png><span>Icon Resource Viewer</span>
+  <p style="font-style: italic">Preview icons from binary files
+  <p id=p style="text-align: center"><img src=images/screenshot.png>
   <ul>
-    <li>Supported file types: ani, cpl, cur, dll, exe, ico, scr
-    <li>Zero-based index or resource id
+    <li>Supported file types: <i>ani, cpl, cur, dll, exe, ico, scr</i>
+    <li>Enter zero-based index or resource id
   </ul>
   <hr>
-  <p><img src=image/system_tray_cleaner.png><span>System Tray Cleaner</span>
-  <p style="font-style: italic">Automatically remove app icons
-  <p>How to use
+  <p><img src=images/media_controls.png style="height: 16px"><span>Media Controls</span>
+  <p style="font-style: italic">Global hotkeys for Spotify
+  <div class=flex style="align-items: center">
+    <div style="margin-top: -5px">
+      <code>Alt</code>
+    </div>
+    <div class=plus></div>
+    <div class=flex style="width: 50px">
+      <code>Space</code>
+      <div class=break></div>
+      <code>Left</code>
+      <div class=break></div>
+      <code>Right</code>
+    </div>
+    <div class="action flex">
+      <p>Play/Pause
+      <div class=break></div>
+      <p>Previous
+      <div class=break></div>
+      <p>Next
+    </div>
+  </div>
+  <hr>
+  <p><img src=images/system_tray_cleaner.png style="height: 18px"><span>System Tray Cleaner</span>
+  <p style="font-style: italic">Remove superfluous icons from notification area
+  <p>How to use:
   <ol>
-    <li>Create <i>apps.txt</i>
-    <li>Enter <i>executable</i> (e.g. spotify)
+    <li>Create <i>config.txt</i>
+    <li>Enter executable <i>filename</i>
     <li>Add one per line
-    <li>Run script before opening app
   </ol>
   <hr>
-  <p><img src=image/window_manager.png><span>Window Manager</span>
-  <p style="font-style: italic">Permanent resize
-  <div class=flex id=hotkeys style="align-items: center">
-    <div id=plus></div>
-    <div class=flex id=key>
+  <p><img src=images/window_manager.png><span>Window Manager</span>
+  <p style="font-style: italic">Various hotkeys
+  <div id=winkey class=flex style="align-items: center">
+    <div class=plus></div>
+    <div class=flex style="width: 80px">
       <code>&#8593;</code>
       <div class=break style="margin-bottom: 3px"></div>
       <code style="margin-right: 2px">&#8592;</code>
       <code style="margin-right: 2px">&#8595;</code>
       <code>&#8594;</code>
       <div class=break></div>
-      <code>C</code>
+      <code>Enter</code>
       <div class=break></div>
       <code>Space</code>
       <div class=break></div>
@@ -47,10 +69,10 @@
       <div class=break></div>
       <code>Z</code>
     </div>
-    <div class=flex id=action>
-      <p id=_snap style="margin-top: 25px">Snap<span id=extend><span> (Hold </span><code>Shift</code><span> to extend)</span></span>
+    <div class="action flex">
+      <p id=_snap style="margin-top: 25px">Snap<span id=extend><span> (Hold </span><code>Shift</code><span> to Extend)</span></span>
       <div class=break></div>
-      <p>Center
+      <p>Resize (50/70)
       <div class=break></div>
       <p>Maximize
       <div class=break></div>
@@ -61,39 +83,13 @@
       <p>Always on top
     </div>
   </div>
+  <p><img src=images/admin.png><span>Note: Run as administrator to control elevated windows</span>
   <p>Workspace
-  <ul id=dash style="padding-inline-start: 10px">
-    <li>Restrict to the screen when moving
-    <li>Stretch to fill to the edges of the screen when resizing
-    <li><i style="color: green">(Recommended)</i> Turn off <i class=high>Snap windows</i> setting in <i class=high>System > Multitasking</i>
+  <ul>
+    <li>Restore windows to the visible screen when moving
+    <li>Stretch windows to fill to the screen edge when resizing
+    <li><i style="color: green">(Recommended)</i> Import <a href=registry/snap.reg>Snap.reg</a>
   </ul>
-  <p>Notes
-  <ul id=icon style="margin-block-end: 0">
-    <li><img src=image/admin.png><span>Run as administrator to control elevated windows</span>
-    <li><img src=image/taskschd.png><span id=startup>Add to startup using Task Scheduler</span>
-  </ul>
-  <div id=hidden>
-    <ol style="margin-top: 10px">
-      <li>Create Task
-      <li>General
-        <ul>
-          <li>Name: <span><i>script.ahk</i></span>
-          <li><span>Run with highest privileges</span>
-        </ul>
-      <li>Triggers
-        <ul>
-          <li>Begin the task: <span>At log on</span>
-          <li>Delay task for: <span>1 second</span> <i>(for system tray icon to show)</i>
-        </ul>
-      <li>Actions
-        <ul>
-          <li>Program/script: <span><i>path_to_AutoHotkeyUX.exe</i></span>
-          <li>Add arguments: <span><i>path_to_script.ahk</i></span>
-        </ul>
-    </ol>
-    <p style="margin-left: 22px">Or run the following command as administrator:
-    <p id=command>schtasks /create /tn "<b>script.ahk</b>" /tr "\"<b>path_to_AutoHotkeyUX.exe</b>\" \"<b>path_to_script.ahk</b>\"" /sc onlogon /delay 0000:01 /rl highest
-  </div>
-  <p id=bottom><a class=button href=https://github.com/jairocontreras/autohotkey id=download>Download</a>
-  <a href=https://www.autohotkey.com id=ahk><img src=image/ahk_site.png></a>
+  <p id=bottom><a href=https://github.com/jairocontreras/autohotkey id=download class=button>Download</a>
+  <a href=https://www.autohotkey.com id=ahk><img src=images/ahk_site.png></a>
 </main>

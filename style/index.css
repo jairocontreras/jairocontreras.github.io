@@ -15,7 +15,7 @@ div {
   text-align: center;
 }
 #github {
-  background: url(/image/github.png) 10px 7px no-repeat #f6f8fa;
+  background: url(/images/github.png) 10px 7px no-repeat #f6f8fa;
   border: 1px solid rgba(27, 31, 36, 0.15);
   border-radius: 6px;
   box-shadow: 0 1px 0 rgba(27, 31, 36, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.25);
