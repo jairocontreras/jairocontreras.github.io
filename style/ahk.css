@@ -29,9 +29,6 @@ p:not(#p):has(+ :is(ol, ul)) {
 .break {
   margin-bottom: 12px;
 }
-.collapse::after {
-  transform: rotate(180deg);
-}
 .plus {
   background: url(/images/plus.png);
   height: 15px;
