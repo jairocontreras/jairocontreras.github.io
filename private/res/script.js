@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
           }
           const video = links[i-1];
-          fetch(video, {mode: "no-cors"})
+          fetch("https://corsproxy.io/?" + encodeURIComponent(video))
             .then(response => response.text())
             .then(html => {
               const date = html.split("video_date_published").pop().match(/[0-9]+/)[0],
