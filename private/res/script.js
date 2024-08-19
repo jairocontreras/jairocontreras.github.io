@@ -2,7 +2,9 @@ document.addEventListener("DOMContentLoaded", () => {
   var a_fetch = true,
       result = "";
   const textarea = document.querySelector("textarea"),
-        p = document.querySelector("p");
+        p = document.querySelector("p"),
+        repeat = document.getElementById("repeat"),
+        number = document.getElementById("number");
   document.querySelector("button").addEventListener("click", event => {
     const button = event.currentTarget;
     if (a_fetch) {
@@ -13,11 +15,12 @@ document.addEventListener("DOMContentLoaded", () => {
             duration = 30;
       (async () => {
         for (let i = 1; i < (len+1); i++) {
-          if ((len > 20) && (i % 20 === 0) && (i !== len)) {
+          if ((len > 10) && (i % 10 === 0) && (i !== len)) {
             p.style.visibility = "visible";
-            if (len > 40) {
-              document.getElementById("qty").style.visibility = "visible";
-              document.getElementById("num").textContent = Math.round((len-i)/20);
+            var count = Math.round((len-i)/10);
+            if (len > 20) {
+              repeat.style.visibility = "visible";
+              number.textContent = count;
             }
             await new Promise(resolve => {
               var start = Date.now();
@@ -25,6 +28,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 var diff = duration - (((Date.now() - start)/1000) | 0),
                     seconds = (diff % 60) | 0;
                 document.getElementById("time").textContent = seconds;
+                if (count === 0)
+                  repeat.style.visibility = "hidden";
                 if (diff === 0)
                   clearInterval(id);
               }
